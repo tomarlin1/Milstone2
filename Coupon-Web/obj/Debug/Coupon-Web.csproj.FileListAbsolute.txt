@@ -1,0 +1,5 @@
+C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\bin\Coupon-Web.dll.config
+C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\bin\Coupon-Web.dll
+C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\bin\Coupon-Web.pdb
+C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\obj\Debug\Coupon-Web.dll
+C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\obj\Debug\Coupon-Web.pdb
