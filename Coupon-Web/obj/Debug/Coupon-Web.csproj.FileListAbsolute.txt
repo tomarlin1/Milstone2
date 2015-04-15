@@ -3,3 +3,9 @@ C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\bin\Coupon-Web.dl
 C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\bin\Coupon-Web.pdb
 C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\obj\Debug\Coupon-Web.dll
 C:\Users\asus\Documents\Visual Studio 2013\Projects\Coupon-Web\obj\Debug\Coupon-Web.pdb
+C:\Users\asus\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.dll.config
+C:\Users\asus\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.dll
+C:\Users\asus\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.pdb
+C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.csprojResolveAssemblyReference.cache
+C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.dll
+C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.pdb
