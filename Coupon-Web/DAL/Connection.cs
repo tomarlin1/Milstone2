@@ -8,10 +8,8 @@ namespace Coupon_Web.DAL
 {
     public class Connection
     {
-
-
         private const string URL = @"Data Source=(LocalDB)\v11.0;
-                            AttachDbFilename=C:\Users\asus\Documents\coupon-web\Coupon-Web\App_Data\LocalDB.mdf;
+                            AttachDbFilename=C:\Users\shimi\Documents\coupon-web\Coupon-Web\App_Data\LocalDB.mdf;
                             Integrated Security=True";
 
         private SqlConnection _conn;

@@ -9,3 +9,9 @@ C:\Users\asus\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.pdb
 C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.csprojResolveAssemblyReference.cache
 C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.dll
 C:\Users\asus\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.pdb
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.csprojResolveAssemblyReference.cache
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.dll
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\obj\Debug\Coupon-Web.pdb
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.dll.config
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.dll
+C:\Users\shimi\Documents\coupon-web\Coupon-Web\bin\Coupon-Web.pdb

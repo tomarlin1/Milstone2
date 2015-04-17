@@ -73,7 +73,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\BlRequests.cs" />
     <Compile Include="DAL\Connection.cs" />
+    <Compile Include="DAL\Queries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
@@ -84,7 +86,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BL\" />
     <Folder Include="BL_Backend\" />
     <Folder Include="PL\" />
   </ItemGroup>

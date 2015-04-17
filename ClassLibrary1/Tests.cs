@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using Coupon_Web.BL;
 using System.Data.SqlClient;
 using Coupon_Web.DAL;
-
-namespace Coupon_Web.PL
+namespace ClassLibrary1
 {
-    public partial class test : System.Web.UI.Page
+    [TestFixture]
+    public class Tests
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Connection conn = new Connection();
-            BL.BlRequests bl = new BL.BlRequests(conn.getSqlCon());
+        private BlRequests bl;
+        private Connection conn;
 
-            //SqlCommand cmdSql = new SqlCommand("insert into [users] values (@UserName,@Name,@Password)", conn.getSqlCon());
-           
+        [SetUp]
+        public void SetUp()
+        {
+            conn = new Connection();
+            bl = new BlRequests(conn.getSqlCon());
+
             conn.open();
 
-            /*cmdSql.Parameters.AddWithValue("@UserName", "shimi2");
-            cmdSql.Parameters.AddWithValue("@Name", "shimisv");
-            cmdSql.Parameters.AddWithValue("@Password", "1234");
-
-            cmdSql.ExecuteNonQuery();*/
-            
-            //bl.InsertUser("asdsdasd", "asds", "svds svcv");
             bl.InsertUser("Amitay140", "amitay", "12345678"); // customer
             bl.InsertUser("shimi", "amitay", "12345678"); // manager
             bl.InsertCategory(2, "Entertainment", "stand-ups, tv-Shows, etc...");
@@ -41,9 +37,49 @@ namespace Coupon_Web.PL
             bl.InsertPaidBy(111, "Paypal");
             bl.InsertRates("Amitay", 1234, 3, "good");
             
-            Label1.Text = "avar beshalom!";
+
+
 
             conn.close();
         }
+
+        [Test]
+        public void InsertTest()
+        {
+            InsertUser("asdsdasd", "asds", "svds svcv");
+            Assert(queries.isExist();
+        }
+
+        [Test]
+        public void InsertCouponTest()
+        {
+
+        }
+
+        [Test]
+        public void InsertTest()
+        {
+
+        }
+
+        [Test]
+        public void InsertTest()
+        {
+
+        }
+
+        [Test]
+        public void InsertTest()
+        {
+
+        }
+
+        [Test]
+        public void InsertTest()
+        {
+
+        }
+
+
     }
 }
