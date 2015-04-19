@@ -40,10 +40,21 @@ namespace ClassLibrary1
             catch (Exception)
             { }
         }
+
         [Test]
-        public void isBusinessExist()
+        public void InsertUserTest()
         {
-            bool ans = bl.IsBusinessExist(1);
+         //   bl.InsertBusiness)()
+            bool ans = bl.IsBusinessExist(1); //added in setup.
+            Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
+        }
+
+
+        [Test]
+        public void InsertBusinessTest()
+        {
+           // bl.InsertBusiness)()
+            bool ans = bl.IsBusinessExist(1); //added in setup.
             Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
         }
 
