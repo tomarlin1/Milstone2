@@ -44,7 +44,7 @@ namespace ClassLibrary1
         [Test]
         public void InsertUserTest()
         {
-            bl.InsertBusiness)()
+         //   bl.InsertBusiness)()
             bool ans = bl.IsBusinessExist(1); //added in setup.
             Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
         }
@@ -53,7 +53,7 @@ namespace ClassLibrary1
         [Test]
         public void InsertBusinessTest()
         {
-            bl.InsertBusiness)()
+           // bl.InsertBusiness)()
             bool ans = bl.IsBusinessExist(1); //added in setup.
             Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
         }
