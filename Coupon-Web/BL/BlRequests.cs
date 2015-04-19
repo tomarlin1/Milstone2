@@ -15,25 +15,22 @@ namespace Coupon_Web.BL
             _query = new Queries(conn);
         }
 
+        /// <the next functions are related to various Insert's functions.>
+        /// 
+        /// </summary>
         public void InsertBusiness(int id, String name,String address, String description, String managerUserName)
         {
-            String[] values = new String[] { id.ToString(), name, address, description, managerUserName};
+            String[] values = new String[] { id.ToString(), name, address, description, managerUserName };
             _query.Insert("Buisness", values);
         }
 
         public void InsertCategory(int id, String name, String description)
         {
-            String[] values = new String[] { id.ToString(), name, description};
+            String[] values = new String[] {id.ToString(), name, description};
             _query.Insert("Category", values);
         }
 
-        public void InsertUser(String userName, String name, String password)
-        {
-            String[] values = new String[] { userName, name, password};
-            _query.Insert("Users", values);
-        }
-
-        public void InsertCoupon(int id, String name, double originalMoney,double discountPrice,DateTime expiredDate, int rating, int businessId)
+        public void InsertCoupon(int id, String name, double originalMoney, double discountPrice, DateTime expiredDate, int rating, int businessId)
         {
             String[] values = new String[] { id.ToString(), name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(), rating.ToString(), businessId.ToString() };
             _query.Insert("Coupon", values);
@@ -54,16 +51,16 @@ namespace Coupon_Web.BL
         public void InsertCustomerPreference(String CustomerUserName, int categoryId)
         {
             String[] values = new String[] { CustomerUserName, categoryId.ToString() };
-            _query.Insert("CustomerPreference", values);
+            _query.Insert("CustomerPerferences", values);
         }
 
-        public void InsertDeal(int id, int status, String serialKey, int couponId,String customerUserName)
+        public void InsertDeal(int id, int status, String serialKey, int couponId, String customerUserName)
         {
             String[] values = new String[] { id.ToString(), status.ToString(), serialKey, couponId.ToString(), customerUserName };
             _query.Insert("Deal", values);
         }
 
-        public void InsertManager( String userName)
+        public void InsertManager(String userName)
         {
             String[] values = new String[] { userName };
             _query.Insert("Manager", values);
@@ -81,42 +78,240 @@ namespace Coupon_Web.BL
             _query.Insert("Rates", values);
         }
 
-        public void InsertSecuredPayment(String method, int securedLevel)
+        public void InsertSecurePayment(String method, int securedLevel)
         {
             String[] values = new String[] { method, securedLevel.ToString() };
-            _query.Insert("SecuredPayment", values);
+            _query.Insert("SecurePayment", values);
         }
 
+        public void InsertSystemManager(String userName)
+        {
+            String[] values = new String[] { userName};
+            _query.Insert("SystemManager", values);
+        }
 
-        
+        public void InsertUser(String userName, String name, String password)
+        {
+            String[] values = new String[] { userName, name, password };
+            _query.Insert("Users", values);
+        }
 
-
-
-
-        //insert etc...
-
+        /// <the next functions are related to various Delete's functions.>
+        /// 
+        /// </summary>
         public void DeleteBusiness(int id)
         {
-            _query.Delete("Buisness", "Id", id.ToString());
+            String[] pkNames = new String[] { "Id" };
+            String[] pkValues = new String[] {id.ToString()};
+            _query.Delete("Buisness", pkNames, pkValues);
+        }
+
+        public void DeleteCategory(int id)
+        {
+            String[] pkNames = new String[] { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            _query.Delete("Category", pkNames, pkValues);
+        }
+
+        public void DeleteCoupon(int couponId)
+        {
+            String[] pkNames = new String[] { "Id" };
+            String[] pkValues = new String[] { couponId.ToString() };
+            _query.Delete("Coupon", pkNames, pkValues);
+        }
+
+        public void DeleteCouponCategory(int couponId , int categoryId)
+        {
+            String[] pkNames = new String[] { "CouponId", "CategoryId" };
+            String[] pkValues = new String[] { couponId.ToString(), categoryId.ToString()};
+            _query.Delete("CouponCategories", pkNames, pkValues);
+        }
+        
+        public void DeleteCustomer(String userName)
+        {
+            String[] pkNames = new String[] { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.Delete("Customer", pkNames, pkValues);
+        }
+
+        public void DeleteCustomerPreferences(String userName, int categoryId)
+        {
+            String[] pkNames = new String[] { "CustomerUserName", "CategoryId" };
+            String[] pkValues = new String[] { userName , categoryId.ToString()};
+            _query.Delete("CustomerPerferences", pkNames, pkValues);
+        }
+
+        public void DeleteDeal(int id)
+        {
+            String[] pkNames = new String[] { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            _query.Delete("Deal", pkNames, pkValues);
+        }
+
+        public void DeleteManager(String userName)
+        {
+            String[] pkNames = new String[] { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.Delete("Manager", pkNames, pkValues);
+        }
+        
+        public void DeletePaidBy(int dealId,String securePayment)
+        {
+            String[] pkNames = new String[] { "DealId", "SecurePayment" };
+            String[] pkValues = new String[] { dealId.ToString(), securePayment };
+            _query.Delete("PaidBy", pkNames, pkValues);
+        }        
+       
+        public void DeleteRates(String userName, int couponId)
+        {
+            String[] pkNames = new String[] { "CustomerUserName","CouponId" };
+            String[] pkValues = new String[] { userName, couponId.ToString() };
+            _query.Delete("Rates", pkNames, pkValues);
+        }      
+
+        public void DeleteSecurePayments(String method)
+        {
+            String[] pkNames = new String[] { "Method" };
+            String[] pkValues = new String[] { method };
+            _query.Delete("SecurePayment", pkNames, pkValues);
+        }
+
+        public void DeleteSystemManager(String userName)
+        {
+            String[] pkNames = new String[] { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.Delete("SystemManager", pkNames, pkValues);
         }
 
         public void DeleteUser(String userName)
         {
-            _query.Delete("Users", "UserName", userName);
+            String[] pkNames = new String[] { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.Delete("Users", pkNames, pkValues);
         }
 
-        //delete etc.
-
-        public void EditBusiness(String pKeyValue, String fieldToEdit, Object value)
+        /// <the next functions are related to various Edit's functions.>
+        /// 
+        /// </summary>
+    
+        public void EditBusiness(int id, String fieldToEdit, Object value)
         {
-            _query.EditField("Buisness", fieldToEdit, value.ToString(), "Id",pKeyValue);
+            String[] pkNames = new String[] { "BuisnessId" };
+            String[] pkValues = new String[] { id.ToString() };
+            _query.EditField("Buisness", pkNames, pkValues, fieldToEdit, value.ToString());
         }
 
-        //etc... etc... edit
-
-        public void IsBusinessExist(String pKeyVal)
+        public void EditCategory(int id, String fieldToEdit, Object value)
         {
-            _query.isExist("", "", pKeyVal);
+            String[] pkNames = { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            _query.EditField("Category", pkNames, pkValues, fieldToEdit, value.ToString());
         }
+
+        public void EditCoupon(int id, String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            _query.EditField("Category", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
+        
+
+        //etc... etc... edit - didnt finish TODO edit yet.
+
+        /// <the next functions are related to various Edit's functions.>
+        /// 
+        /// </summary>
+        
+        public bool IsBusinessExist(int id)
+        {
+            String[] pkNames = { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            return _query.isExist("Buisness", pkNames, pkValues);
+        }
+       
+        public bool IsCategoryExist(int id)
+        {
+            String[] pkNames = { "Id"};
+            String[] pkValues = new String[] { id.ToString() };
+            return _query.isExist("Category", pkNames, pkValues);
+        }
+
+        public bool IsCouponExist(int id)
+        {
+            String[] pkNames = { "Id" };
+            String[] pkValues = new String[] { id.ToString() };
+            return _query.isExist("Coupon", pkNames, pkValues);
+        }
+
+        public bool IsCouponCategoryExist(int couponId, int categrotyId)
+        {
+            String[] pkNames = { "CouponId", "CategoryId"};
+            String[] pkValues = new String[] { couponId.ToString(), categrotyId.ToString() };
+            return _query.isExist("CouponCategories", pkNames, pkValues);
+        }
+
+        public bool IsCustomerExist(String userName)
+        {
+            String[] pkNames = { "UserName" };
+            String[] pkValues = new String[] {userName};
+            return _query.isExist("", pkNames, pkValues);
+        }
+
+        public bool IsCustomerPreferenceExist(String userName, int categoryId)
+        {
+            String[] pkNames = { "CustomerUserName", "CategoryId"};
+            String[] pkValues = new String[] { userName, categoryId.ToString() };
+            return _query.isExist("CustomerPerferences", pkNames, pkValues);
+        }
+
+        public bool IsDealExist(int id)
+        {
+            String[] pkNames = { "Id"};
+            String[] pkValues = new String[] {id.ToString()};
+            return _query.isExist("Deal", pkNames, pkValues);
+        }
+
+        public bool IsManagerExist(String userName)
+        {
+            String[] pkNames = {"UserName" };
+            String[] pkValues = new String[] { userName};
+            return _query.isExist("Manager", pkNames, pkValues);
+        }
+
+        public bool IsPaidByExist(String dealId, String securePayment)
+        {
+            String[] pkNames = {"DealId","SecurePayment" };
+            String[] pkValues = new String[] { dealId, securePayment };
+            return _query.isExist("PaidBy", pkNames, pkValues);
+        }
+
+        public bool IsRateExist(String customerUserName, int couponId)
+        {
+            String[] pkNames = {"customerUserName","CouponId" };
+            String[] pkValues = new String[] { customerUserName, couponId.ToString() };
+            return _query.isExist("Rates", pkNames, pkValues);
+        }
+
+        public bool IsSecurePaymentExist(String method)
+        {
+            String[] pkNames = { "Method"};
+            String[] pkValues = new String[] { method };
+            return _query.isExist("SecurePayment", pkNames, pkValues);
+        }
+
+        public bool IsSystemManagerExist(String userName)
+        {
+            String[] pkNames = {"UserName" };
+            String[] pkValues = new String[] { userName };
+            return _query.isExist("SystemManager", pkNames, pkValues);
+        }
+
+        public bool IsUserExist(String userName)
+        {
+            String[] pkNames = {"UserName" };
+            String[] pkValues = new String[] { userName };
+            return _query.isExist("Users", pkNames, pkValues);
+        }
+
     }
 }

@@ -47,37 +47,65 @@ namespace Coupon_Web.DAL
             }
             //execute.
             cmdSql.ExecuteNonQuery();
-            
         }
 
         //
-        public void EditField(String tableName, String fieldName, String newValue, String pKeyValue, String pKeyName)
+        public void EditField(String tableName, String[] pKeyNames, String[] pKeyValues, String fieldName, String newValue)
         {
-            String query = "UPDATE [" + tableName + "] " + 
-                           "SET " + fieldName + "=" + "@newVal " + 
-                           "WHERE " + pKeyName + "=@pKey";
+            int pkSize = pKeyNames.Length;
+            String query = "UPDATE [" + tableName + "] " +
+                           "SET " + fieldName + "=" + "@newVal " +
+                           "WHERE ";
+            String pkCond = "";
+
+            //creating place holders in format: @0,@1,@2 etc...
+            for (int i = 0; i < pkSize; i++)
+            {
+                pkCond += pKeyNames[i] + "=@" + i;
+                if (i < pkSize - 1)
+                    pkCond += " AND ";
+            }
+            query += pkCond;
 
             //create sqlcommand.
             SqlCommand cmdSql = new SqlCommand(query, _dbCon);
 
-            //replace the given edit value into placeholders.
+            //replace the given values into placeholders.
+            for (int i = 0; i < pkSize; i++)
+            {
+                cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
+            }
             cmdSql.Parameters.AddWithValue("@newVal", newValue);
-            cmdSql.Parameters.AddWithValue("@pkey", pKeyValue);
-            
+
             //execute.
             cmdSql.ExecuteNonQuery();
         }
 
         //
-        public void Delete(String tableName, String pKeyName, String pKeyValue)
+        public void Delete(String tableName, String[] pKeyNames, String[] pKeyValues)
         {
+            int pkSize = pKeyNames.Length;
             String query = "DELETE FROM [" + tableName + "] " +
-                           "WHERE " + pKeyName + "=@pKey";
+                           "WHERE ";
+            String pkCond = "";
+
+            //creating place holders in format: @0,@1,@2 etc...
+            for (int i = 0; i < pkSize; i++)
+            {
+                pkCond += pKeyNames[i] + "=@" + i;
+                if (i < pkSize - 1)
+                    pkCond += " AND ";
+            }
+            query += pkCond;
+
             //create sqlcommand.
             SqlCommand cmdSql = new SqlCommand(query, _dbCon);
 
-            //replace the given edit value into placeholders.
-            cmdSql.Parameters.AddWithValue("@pkey", pKeyValue);
+            //replace the given values into placeholders.
+            for (int i = 0; i < pkSize; i++)
+            {
+                cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
+            }
 
             //execute.
             cmdSql.ExecuteNonQuery();
@@ -85,29 +113,37 @@ namespace Coupon_Web.DAL
 
         //find row with PK pKeyName in tableName
         //in success return the line, else return NULL.
-        public bool isExist(String tableName, String pKeyName, String pKeyValue)
+        public bool isExist(String tableName, String[] pKeyNames, String[] pKeyValues)
         {
+            int pkSize = pKeyNames.Length;
             String query = "SELECT * FROM [" + tableName + "] " +
-                           "WHERE " + pKeyName + "=@pKey";
+                           "WHERE ";
+            String pkCond = "";
+            
+            //creating place holders in format: @0,@1,@2 etc...
+            for (int i = 0; i < pkSize; i++)
+            {
+                pkCond += pKeyNames[i] + "=@" + i;
+                if (i < pkSize - 1)
+                    pkCond += " AND ";
+            }
+            query += pkCond;
+
             //create sqlcommand.
             SqlCommand cmdSql = new SqlCommand(query, _dbCon);
 
-            //replace the given edit value into placeholders.
-            cmdSql.Parameters.AddWithValue("@pkey", pKeyValue);
-
+            //replace the given values into placeholders.
+            for (int i = 0; i < pkSize; i++)
+            {
+                cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
+            }
             //execute.
             SqlDataReader reader = cmdSql.ExecuteReader();
             
             bool tmp = reader.HasRows;
             reader.Close();
             return tmp;
-
         }
-    
-    
-        
-    
-    
     
     }
 }

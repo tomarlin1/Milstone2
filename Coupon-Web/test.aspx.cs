@@ -17,33 +17,61 @@ namespace Coupon_Web.PL
             BL.BlRequests bl = new BL.BlRequests(conn.getSqlCon());
 
             //SqlCommand cmdSql = new SqlCommand("insert into [users] values (@UserName,@Name,@Password)", conn.getSqlCon());
-           
-            conn.open();
 
-            /*cmdSql.Parameters.AddWithValue("@UserName", "shimi2");
-            cmdSql.Parameters.AddWithValue("@Name", "shimisv");
-            cmdSql.Parameters.AddWithValue("@Password", "1234");
 
-            cmdSql.ExecuteNonQuery();*/
-            
-            //bl.InsertUser("asdsdasd", "asds", "svds svcv");
-            bl.InsertUser("Amitay140", "amitay", "12345678"); // customer
-            bl.InsertUser("shimi", "amitay", "12345678"); // manager
-            bl.InsertCategory(2, "Entertainment", "stand-ups, tv-Shows, etc...");
-            bl.InsertSecuredPayment("Paypal", 5);
-            bl.InsertManager("shimi");
-            bl.InsertBusiness(123, "Hamashbir", "menashe kapara 33 Rehovot", "in the shop you can find a lot of things", "shimi");
-            bl.InsertCoupon(1234, "dead-sea-soap", 100, 70, new DateTime(2014, 04, 06), 1, 123);
-            bl.InsertCouponCategory(1234, 2);
-            bl.InsertCustomer("Amitay140", "amitay@gmail.com", "0542819491");
-            bl.InsertCustomerPreference("Amitay140", 2);
-            bl.InsertDeal(111, 0, "11111", 1234, "Amitay140");
-            bl.InsertPaidBy(111, "Paypal");
-            bl.InsertRates("Amitay", 1234, 3, "good");
-            
-            Label1.Text = "avar beshalom!";
+            try
+            {
+                conn.open();
+                /*cmdSql.Parameters.AddWithValue("@UserName", "shimi2");
+                cmdSql.Parameters.AddWithValue("@Name", "shimisv");
+                cmdSql.Parameters.AddWithValue("@Password", "1234");
 
-            conn.close();
+                cmdSql.ExecuteNonQuery();*/
+
+                /*bl.InsertUser("Amitay", "amitay", "12345678"); // customer
+                bl.InsertUser("shimi", "amitay", "12345678"); // manager
+                bl.InsertCategory(1, "Entertainment", "stand-ups, tv-Shows, etc...");
+                bl.InsertSecurePayment("Paypal", 5);
+                bl.InsertManager("shimi");
+                bl.InsertBusiness(1, "Hamashbir", "menashe kapara 33 Rehovot", "in the shop you can find a lot of things", "shimi");
+                bl.InsertCoupon(1, "dead-sea-soap", 100, 70, new DateTime(2014, 04, 06).Date, 1, 1);
+                bl.InsertCouponCategory(1, 1);
+                bl.InsertCustomer("Amitay", "amitay@gmail.com", "0542819491");
+                bl.InsertCustomerPreference("Amitay", 1);
+                bl.InsertDeal(1, 0, "11111", 1, "Amitay");
+                bl.InsertPaidBy(1, "Paypal");
+                bl.InsertRates("Amitay", 1, 3, "good");
+                */
+
+                bool ans = bl.IsBusinessExist(1);
+                Label1.Text = ans.ToString();
+
+                bl.DeleteRates("Amitay", 1);
+                bl.DeletePaidBy(1, "Paypal");
+                bl.DeleteDeal(1);
+                bl.DeleteCustomerPreferences("Amitay", 1);
+                bl.DeleteCustomer("Amitay");
+                bl.DeleteCouponCategory(1, 1);
+                bl.DeleteCoupon(1);
+                bl.DeleteBusiness(1);
+                bl.DeleteManager("shimi");
+                bl.DeleteSecurePayments("Paypal");
+                bl.DeleteCategory(1);
+                bl.DeleteUser("shimi");
+                bl.DeleteUser("Amitay");
+
+                //Label1.Text = "avar beshalom!";
+
+            }
+            catch (Exception ee)
+            {
+                Label1.Text = ee.ToString();
+            }
+            finally
+            {
+                conn.close();
+            }
         }
+            
     }
 }
