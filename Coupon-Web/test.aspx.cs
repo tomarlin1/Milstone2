@@ -16,18 +16,10 @@ namespace Coupon_Web.PL
             Connection conn = new Connection();
             BL.BlRequests bl = new BL.BlRequests(conn.getSqlCon());
 
-            //SqlCommand cmdSql = new SqlCommand("insert into [users] values (@UserName,@Name,@Password)", conn.getSqlCon());
-
-
             try
             {
                 conn.open();
-                /*cmdSql.Parameters.AddWithValue("@UserName", "shimi2");
-                cmdSql.Parameters.AddWithValue("@Name", "shimisv");
-                cmdSql.Parameters.AddWithValue("@Password", "1234");
-
-                cmdSql.ExecuteNonQuery();*/
-
+                
                 bl.InsertUser("Amitay", "amitay", "12345678"); // customer
                 bl.InsertUser("shimi", "amitay", "12345678"); // manager
                 bl.InsertCategory(1, "Entertainment", "stand-ups, tv-Shows, etc...");

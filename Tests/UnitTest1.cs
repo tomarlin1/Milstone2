@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using Coupon_Web.BL;
-using System.Data.SqlClient;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Coupon_Web.DAL;
+using Coupon_Web.BL;
 using System.IO;
-namespace ClassLibrary1
+namespace Tests
 {
-    [TestFixture]
-    public class Tests
+
+    [TestClass]
+    public class UnitTest1
     {
+
+
         private BlRequests bl;
         private Connection conn;
 
-        [SetUp]
+
+        [TestInitialize]
         public void SetUp()
         {
+            AppDomain.CurrentDomain.SetData(
+     "DataDirectory", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ""));
             conn = new Connection();
             bl = new BlRequests(conn.getSqlCon());
             try
@@ -46,97 +47,54 @@ namespace ClassLibrary1
             { }
         }
 
-        [Test]
-        public void InsertBusinessTest()
-        {
-            bool before = bl.IsBusinessExist(2);
-            bl.InsertBusiness(2, "Academon", "meonot 3", "shop for students", "shimi");
-            bool after = bl.IsBusinessExist(2);
-
-            Assert.AreNotEqual(before, after, "should not be equal");
-        }
-
-        [Test]
+        [TestMethod]
         public void InsertUserTest()
         {
-            bool before = bl.IsUserExist("Tomer");
-            bl.InsertUser("Tomer", "kof", "1234");
-            bool after = bl.IsUserExist("Tomer");
-
-            Assert.AreNotEqual(before, after, "should not be equal");
+            //   bl.InsertBusiness)()
+            bool ans = bl.IsBusinessExist(1); //added in setup.
+            Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
         }
 
-        [Test]
+
+        [TestMethod]
+        public void InsertBusinessTest()
+        {
+            // bl.InsertBusiness)()
+            bool ans = bl.IsBusinessExist(1); //added in setup.
+            Assert.AreEqual(ans, true, "business with id 1 has added to the system but not found");
+        }
+
+        [TestMethod]
+        public void InsertTest()
+        {
+            Assert.AreEqual(1, 1);
+        }
+
+        [TestMethod]
         public void InsertCouponTest()
         {
-            bool before = bl.IsCouponExist(2);
-            bl.InsertCoupon(2, "dead-sea-cream", 400, 300, new DateTime(2015, 04, 03).Date, 3, 1);
-            bool after = bl.IsCouponExist(2);
 
-            Assert.AreNotEqual(before, after, "should not be equal");
         }
 
-        [Test]
-        public void InsertManagerTest()
-        {
-            bool before = bl.IsManagerExist("haliliAsaf");
-            bl.InsertManager("haliliAsaf");
-            bool after = bl.IsManagerExist("haliliAsaf");
-            Assert.AreNotEqual(before, after, "should not be equal");
-        }
-
-        [Test]
-        public void InsertDealTest()
-        {
-            bool before = bl.IsDealExist(2);
-            bl.InsertDeal(2, 0, "ADGR-DSD1-d345", 1, "Amitay", "Paypal");
-            bool after = bl.IsDealExist(2);
-
-            Assert.AreNotEqual(before, after, "should not be equal");
-        }
-
-        [Test]
+        [TestMethod]
         public void DeleteRateTest()
         {
+            bool before = bl.IsRateExist("Amitay", 1);
             bl.DeleteRates("Amitay", 1);
             bool after = bl.IsRateExist("Amitay", 1);
-            Assert.AreEqual(after, false, "after should be false");
+            Assert.AreEqual(!before, after, "delete rate did not succeded");
         }
 
-        [Test]
-        public void DeleteUserTest()
+        [TestMethod]
+        public void EditRateTest()
         {
-            bl.DeleteUser("Fahima");
-            bool after = bl.IsUserExist("Fahima");
-            Assert.AreEqual(after, false, "after should be false");
+            bool before = bl.IsRateExist("Amitay", 1);
+            bl.DeleteRates("Amitay", 1);
+            bool after = bl.IsRateExist("Amitay", 1);
+            Assert.AreEqual(!before, after, "delete rate did not succeded");
         }
 
-        [Test]
-        public void DeleteCategoryTest()
-        {
-            bl.DeleteCategory(4);
-            bool after = bl.IsCategoryExist(4);
-            Assert.AreEqual(after, false, "after should be false");
-        }
-
-        [Test]
-        public void DeleteSecurePaymentTest()
-        {
-            bl.DeleteSecurePayments("Cash");
-            bool after = bl.IsSecurePaymentExist("Cash");
-            Assert.AreEqual(after, false, "after should be false");
-        }
-
-        [Test]
-        public void DeleteSystemManagerTest()
-        {
-            bl.DeleteSystemManager("shimi");
-            bool after = bl.IsSystemManagerExist("shimi");
-            Assert.AreEqual(after, false, "after should be false");
-        }
-
-
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
             try
@@ -149,7 +107,7 @@ namespace ClassLibrary1
                 bl.DeleteUser("haliliAsaf");
                 bl.DeleteDeal(2);
                 bl.DeleteCoupon(2);
-               
+
                 //added in set up.
                 bl.DeleteSecurePayments("Cash");
                 bl.DeleteUser("Fahima");

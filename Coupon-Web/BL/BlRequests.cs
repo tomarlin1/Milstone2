@@ -58,6 +58,12 @@ namespace Coupon_Web.BL
         {
             String[] values = new String[] { id.ToString(), status.ToString(), serialKey, couponId.ToString(), customerUserName, paymentMethod };
             _query.Insert("Deal", values);
+        }
+
+        public void InsertFriend(String userName, String friendUserName)
+        {
+            String[] values = new String[] { userName, friendUserName };
+            _query.Insert("Friends", values);
         } 
 
         public void InsertManager(String userName)
@@ -142,6 +148,13 @@ namespace Coupon_Web.BL
             _query.Delete("Deal", pkNames, pkValues);
         }
 
+        public void DeleteFriend(String userName, String friendUserName)
+        {
+            String[] pkNames = new String[] { "UserName", "FriendUserName" };
+            String[] pkValues = new String[] { userName, friendUserName };
+            _query.Delete("Friends", pkNames, pkValues);
+        }
+
         public void DeleteManager(String userName)
         {
             String[] pkNames = new String[] { "UserName" };
@@ -199,7 +212,7 @@ namespace Coupon_Web.BL
         {
             String[] pkNames = { "Id" };
             String[] pkValues = new String[] { id.ToString() };
-            _query.EditField("Category", pkNames, pkValues, fieldToEdit, value.ToString());
+            _query.EditField("Coupon", pkNames, pkValues, fieldToEdit, value.ToString());
         }
 
         public void EditCustomer(String userName, String fieldToEdit, Object value)
@@ -208,9 +221,35 @@ namespace Coupon_Web.BL
             String[] pkValues = new String[] { userName };
             _query.EditField("Cutomer", pkNames, pkValues, fieldToEdit, value.ToString());
         }
-        
 
-        //etc... etc... edit - didnt finish TODO edit yet.
+        
+        public void EditDeal( int id, String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "Id" };
+            String[] pkValues = new String[] {  id.ToString()};
+            _query.EditField("Deal", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
+
+        public void EditRates(String customerUserName, int couponId , String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "CustomerUserName", "CouponId" };
+            String[] pkValues = new String[] { customerUserName, couponId.ToString() };
+            _query.EditField("Rates", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
+
+        public void EditSecurePayment(String method, String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "Method"};
+            String[] pkValues = new String[] { method };
+            _query.EditField("SecurePayment", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
+
+        public void EditUser(String userName, String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.EditField("Users", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
 
         /// <the next functions are related to various Edit's functions.>
         /// 
@@ -263,6 +302,15 @@ namespace Coupon_Web.BL
             String[] pkNames = { "Id"};
             String[] pkValues = new String[] {id.ToString()};
             return _query.isExist("Deal", pkNames, pkValues);
+        }
+
+        public bool IsFriendExist(String userName, String friendUserName)
+        {
+            String[] pkNames = { "UserName", "FriendUserName" };
+            String[] pkValues1 = new String[] { userName, friendUserName };
+            String[] pkValues2 = new String[] {friendUserName, userName};
+            return (_query.isExist("Friends", pkNames, pkValues1) 
+                || _query.isExist("Friends", pkNames, pkValues2));
         }
 
         public bool IsManagerExist(String userName)
