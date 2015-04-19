@@ -28,7 +28,7 @@ namespace Coupon_Web.PL
 
                 cmdSql.ExecuteNonQuery();*/
 
-                /*bl.InsertUser("Amitay", "amitay", "12345678"); // customer
+                bl.InsertUser("Amitay", "amitay", "12345678"); // customer
                 bl.InsertUser("shimi", "amitay", "12345678"); // manager
                 bl.InsertCategory(1, "Entertainment", "stand-ups, tv-Shows, etc...");
                 bl.InsertSecurePayment("Paypal", 5);
@@ -38,16 +38,14 @@ namespace Coupon_Web.PL
                 bl.InsertCouponCategory(1, 1);
                 bl.InsertCustomer("Amitay", "amitay@gmail.com", "0542819491");
                 bl.InsertCustomerPreference("Amitay", 1);
-                bl.InsertDeal(1, 0, "11111", 1, "Amitay");
-                bl.InsertPaidBy(1, "Paypal");
+                bl.InsertDeal(1, 0, "11111", 1, "Amitay", "Paypal");
                 bl.InsertRates("Amitay", 1, 3, "good");
-                */
+                
 
                 bool ans = bl.IsBusinessExist(1);
                 Label1.Text = ans.ToString();
 
                 bl.DeleteRates("Amitay", 1);
-                bl.DeletePaidBy(1, "Paypal");
                 bl.DeleteDeal(1);
                 bl.DeleteCustomerPreferences("Amitay", 1);
                 bl.DeleteCustomer("Amitay");

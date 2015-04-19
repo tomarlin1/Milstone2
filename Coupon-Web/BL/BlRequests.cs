@@ -54,22 +54,16 @@ namespace Coupon_Web.BL
             _query.Insert("CustomerPerferences", values);
         }
 
-        public void InsertDeal(int id, int status, String serialKey, int couponId, String customerUserName)
+        public void InsertDeal(int id, int status, String serialKey, int couponId, String customerUserName, String paymentMethod)
         {
-            String[] values = new String[] { id.ToString(), status.ToString(), serialKey, couponId.ToString(), customerUserName };
+            String[] values = new String[] { id.ToString(), status.ToString(), serialKey, couponId.ToString(), customerUserName, paymentMethod };
             _query.Insert("Deal", values);
-        }
+        } 
 
         public void InsertManager(String userName)
         {
             String[] values = new String[] { userName };
             _query.Insert("Manager", values);
-        }
-
-        public void InsertPaidBy(int dealId,  String securedPayment)
-        {
-            String[] values = new String[] { dealId.ToString(), securedPayment };
-            _query.Insert("PaidBy", values);
         }
 
         public void InsertRates(String userName, int couponId, int rateNumber, String description)
@@ -154,14 +148,7 @@ namespace Coupon_Web.BL
             String[] pkValues = new String[] { userName };
             _query.Delete("Manager", pkNames, pkValues);
         }
-        
-        public void DeletePaidBy(int dealId,String securePayment)
-        {
-            String[] pkNames = new String[] { "DealId", "SecurePayment" };
-            String[] pkValues = new String[] { dealId.ToString(), securePayment };
-            _query.Delete("PaidBy", pkNames, pkValues);
-        }        
-       
+               
         public void DeleteRates(String userName, int couponId)
         {
             String[] pkNames = new String[] { "CustomerUserName","CouponId" };
@@ -213,6 +200,13 @@ namespace Coupon_Web.BL
             String[] pkNames = { "Id" };
             String[] pkValues = new String[] { id.ToString() };
             _query.EditField("Category", pkNames, pkValues, fieldToEdit, value.ToString());
+        }
+
+        public void EditCustomer(String userName, String fieldToEdit, Object value)
+        {
+            String[] pkNames = { "UserName" };
+            String[] pkValues = new String[] { userName };
+            _query.EditField("Cutomer", pkNames, pkValues, fieldToEdit, value.ToString());
         }
         
 
@@ -276,13 +270,6 @@ namespace Coupon_Web.BL
             String[] pkNames = {"UserName" };
             String[] pkValues = new String[] { userName};
             return _query.isExist("Manager", pkNames, pkValues);
-        }
-
-        public bool IsPaidByExist(String dealId, String securePayment)
-        {
-            String[] pkNames = {"DealId","SecurePayment" };
-            String[] pkValues = new String[] { dealId, securePayment };
-            return _query.isExist("PaidBy", pkNames, pkValues);
         }
 
         public bool IsRateExist(String customerUserName, int couponId)
