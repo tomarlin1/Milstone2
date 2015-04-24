@@ -48,13 +48,19 @@
             <tr>
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style5">
-                    <asp:Button ID="ButtonLogin" runat="server" style="text-align: justify" Text="Login" Width="97px" OnClick="ButtonLogin_Click" />
+                    <asp:DropDownList ID="Type" runat="server">
+                        <asp:ListItem>Customer</asp:ListItem>
+                        <asp:ListItem>BusinessManager</asp:ListItem>
+                        <asp:ListItem>Administrator</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5">
+                    <asp:Button ID="ButtonLogin" runat="server" style="text-align: justify" Text="Login" Width="97px" OnClick="ButtonLogin_Click" />
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>

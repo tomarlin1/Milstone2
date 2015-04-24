@@ -10,7 +10,7 @@
 namespace PL {
     
     
-    public partial class LoginPage {
+    public partial class RegisterPage {
         
         /// <summary>
         /// form1 control.
@@ -40,6 +40,24 @@ namespace PL {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameVali;
         
         /// <summary>
+        /// TbName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbName;
+        
+        /// <summary>
+        /// NameVali control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NameVali;
+        
+        /// <summary>
         /// TbPassword control.
         /// </summary>
         /// <remarks>
@@ -58,21 +76,48 @@ namespace PL {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordVali;
         
         /// <summary>
-        /// Type control.
+        /// TbRepeatPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Type;
+        protected global::System.Web.UI.WebControls.TextBox TbRepeatPass;
         
         /// <summary>
-        /// ButtonLogin control.
+        /// ConfirmPasswordVali control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLogin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPasswordVali;
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
+        /// <summary>
+        /// Submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Submit;
+        
+        /// <summary>
+        /// Reset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Reset;
     }
 }
