@@ -65,7 +65,9 @@
             </tr>
             <tr>
                 <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5">
+                    <asp:Label ID="errorlbl" runat="server"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>

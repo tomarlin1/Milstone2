@@ -13,12 +13,24 @@ namespace Coupon_Web.DAL
                             Integrated Security=True";
         //|DataDirectory|\LocalDB.mdf;
 
+        //singleton pattern
+        private static Connection instance;
+
         private SqlConnection _conn;
-        public Connection()
+
+        private Connection()
         {
             _conn = new System.Data.SqlClient.SqlConnection();
             _conn.ConnectionString = URL;
         }
+
+        public static Connection getInstanceConn()
+        {
+            if (instance == null)
+                instance = new Connection(); 
+            return instance;           
+        }
+
 
         public SqlConnection getSqlCon()
         {

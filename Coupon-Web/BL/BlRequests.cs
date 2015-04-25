@@ -10,9 +10,11 @@ namespace Coupon_Web.BL
     public class BlRequests
     {
         private Queries _query;
-        public BlRequests(SqlConnection conn)
+        
+
+        public BlRequests()
         {
-            _query = new Queries(conn);
+            _query = new Queries();
         }
 
         /// <the next functions are related to various Insert's functions.>
@@ -23,6 +25,26 @@ namespace Coupon_Web.BL
             String[] values = new String[] { id.ToString(), name, address, description, managerUserName };
             _query.Insert("Buisness", values);
         }
+        public Boolean ExistUserForLogin(string userName, string password)
+        {
+            String[] pkNames = { "UserName", "Password" };
+            String[] pkValues = new String[] { userName, password };
+            return _query.isExist("Users", pkNames, pkValues);
+        }
+        public Boolean LoginAsCustomer(string userName, string password)
+        {
+            return ExistUserForLogin(userName, password) && IsCustomerExist(userName);
+        }
+        public Boolean LoginAsManager(string userName, string password)
+        {
+            return ExistUserForLogin(userName, password) && IsManagerExist(userName);
+        }
+        public Boolean LoginAsSystemManager(string userName, string password)
+        {
+            return ExistUserForLogin(userName, password) && IsSystemManagerExist(userName);
+        }
+        
+        
         public void InsertCategory(int id, String name, String description)
         {
             String[] values = new String[] { id.ToString(), name, description };

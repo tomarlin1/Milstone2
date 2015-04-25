@@ -15,21 +15,46 @@ namespace PL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Page.Session
         }
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
-
-            Connection conn = new Connection();
-            BlRequests request = new BlRequests(conn.getSqlCon());
-            conn.open();
-            bool isUserExist =request.IsUserExist(TbUserName.Text);
-            conn.close();
-            if (isUserExist)
-                Response.Write("User Exist");
-            else
-                Response.Write("User Does Not Exist");
-             
+            string nextPage;
+            BlRequests request = new BlRequests();
+            if (Type.SelectedIndex == 0) //customer
+            {
+                if (request.LoginAsCustomer(TbUserName.Text, TbPassword.Text))
+                    nextPage = "Customer/CustomerHomeP.aspx";
+                else
+                {
+                    errorlbl.Text = "the customer isn't exist";
+                    return;
+                }
+            }
+            else if (Type.SelectedIndex == 1) // manager
+            {
+                if (request.LoginAsManager(TbUserName.Text, TbPassword.Text))
+                    nextPage = "Manager/ManagerHomeP.aspx";
+                else
+                {
+                    errorlbl.Text = "the manager business isn't exist";
+                    return;
+                }
+            }
+            else //system Manager
+            {
+                if (request.LoginAsSystemManager(TbUserName.Text, TbPassword.Text))
+                    nextPage = "SystemManager/SystemManagerHomeP.aspx";
+                else
+                {
+                    errorlbl.Text = "the system manager isn't exist";
+                    return;
+                }               
+            }
+            Page.Session["UserName"] = TbUserName.Text;
+            Page.Session["Password"] = TbPassword.Text;
+            Response.Redirect(nextPage); 
         }
     }
 }
