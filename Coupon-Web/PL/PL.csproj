@@ -57,10 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Customer\BuyCoupon.aspx" />
+    <Content Include="Customer\CouponHistory.aspx" />
+    <Content Include="Customer\CouponNotifications.aspx" />
+    <Content Include="Customer\CustomerHomeP.aspx" />
+    <Content Include="Customer\CustomerMaster.Master" />
+    <Content Include="Customer\FriendsReport.aspx" />
+    <Content Include="Customer\SearchBusiness.aspx" />
+    <Content Include="Customer\SearchCoupon.aspx" />
+    <Content Include="Manager\ManagerMaster.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="SystemManager\SystemMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -74,12 +84,75 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer\BuyCoupon.aspx.cs">
+      <DependentUpon>BuyCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\BuyCoupon.aspx.designer.cs">
+      <DependentUpon>BuyCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CouponHistory.aspx.cs">
+      <DependentUpon>CouponHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CouponHistory.aspx.designer.cs">
+      <DependentUpon>CouponHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CouponNotifications.aspx.cs">
+      <DependentUpon>CouponNotifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
+      <DependentUpon>CouponNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerHomeP.aspx.cs">
+      <DependentUpon>CustomerHomeP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerHomeP.aspx.designer.cs">
+      <DependentUpon>CustomerHomeP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerMaster.Master.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerMaster.Master.designer.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\FriendsReport.aspx.cs">
+      <DependentUpon>FriendsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\FriendsReport.aspx.designer.cs">
+      <DependentUpon>FriendsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\SearchBusiness.aspx.cs">
+      <DependentUpon>SearchBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\SearchBusiness.aspx.designer.cs">
+      <DependentUpon>SearchBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\SearchCoupon.aspx.cs">
+      <DependentUpon>SearchCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\SearchCoupon.aspx.designer.cs">
+      <DependentUpon>SearchCoupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerMaster.Master.cs">
+      <DependentUpon>ManagerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerMaster.Master.designer.cs">
+      <DependentUpon>ManagerMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -93,6 +166,13 @@
     </Compile>
     <Compile Include="RegisterUser.aspx.designer.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemManager\SystemMaster.Master.cs">
+      <DependentUpon>SystemMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemManager\SystemMaster.Master.designer.cs">
+      <DependentUpon>SystemMaster.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +188,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
