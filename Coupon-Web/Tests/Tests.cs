@@ -9,17 +9,14 @@ namespace Tests
     public class Tests
     {
         private BlRequests bl;
-        private Connection conn;
 
         [TestInitialize]
         public void SetUp()
         {
            
-            conn = new Connection();
-            bl = new BlRequests(conn.getSqlCon());
+            bl = new BlRequests();
             try
             {
-                conn.open();
                 bl.InsertUser("Amitay", "amitay", "12345678"); // customer
                 bl.InsertUser("shimi", "amitay", "12345678"); // manager
                 bl.InsertCategory(1, "Entertainment", "stand-ups, tv-Shows, etc...");
@@ -164,10 +161,6 @@ namespace Tests
             }
             catch (Exception)
             { }
-            finally
-            {
-                conn.close();
-            }
         }
     }
 }

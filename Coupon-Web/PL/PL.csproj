@@ -65,11 +65,13 @@
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
     <Content Include="Customer\SearchCoupon.aspx" />
+    <Content Include="Manager\ManagerHomeP.aspx" />
     <Content Include="Manager\ManagerMaster.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="SystemManager\SystemManagerHomeP.aspx" />
     <Content Include="SystemManager\SystemMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -147,6 +149,13 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ManagerHomeP.aspx.cs">
+      <DependentUpon>ManagerHomeP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerHomeP.aspx.designer.cs">
+      <DependentUpon>ManagerHomeP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerMaster.Master.cs">
       <DependentUpon>ManagerMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -166,6 +175,13 @@
     </Compile>
     <Compile Include="RegisterUser.aspx.designer.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemManager\SystemManagerHomeP.aspx.cs">
+      <DependentUpon>SystemManagerHomeP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemManager\SystemManagerHomeP.aspx.designer.cs">
+      <DependentUpon>SystemManagerHomeP.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemManager\SystemMaster.Master.cs">
       <DependentUpon>SystemMaster.Master</DependentUpon>
