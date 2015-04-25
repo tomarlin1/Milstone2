@@ -9,8 +9,9 @@ namespace Coupon_Web.DAL
     public class Connection
     {
         private const string URL = @"Data Source=(LocalDB)\v11.0;
-                            AttachDbFilename=|DataDirectory|\LocalDB.mdf;
+                            AttachDbFilename=C:\Users\matan\OneDrive\האוניברסיטה\סימסטר ד\ניתוח ועיצוב\coupon-web\Coupon-Web\DAL\LocalDB.mdf;
                             Integrated Security=True";
+        //|DataDirectory|\LocalDB.mdf;
 
         private SqlConnection _conn;
         public Connection()
