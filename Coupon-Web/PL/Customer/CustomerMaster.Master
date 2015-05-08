@@ -13,7 +13,7 @@
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-       z     <asp:Panel ID="Panel1" runat="server" BackColor="White">
+       &nbsp;<asp:Panel ID="Panel1" runat="server" BackColor="White" Height="300px">
                 </asp:Panel>
         
         </asp:ContentPlaceHolder>

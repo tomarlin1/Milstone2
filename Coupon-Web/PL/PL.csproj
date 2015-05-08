@@ -57,6 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LocalDB.mdf" />
+    <Content Include="App_Data\LocalDB_log.ldf">
+      <DependentUpon>LocalDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Customer\BuyCoupon.aspx" />
     <Content Include="Customer\CouponHistory.aspx" />
     <Content Include="Customer\CouponNotifications.aspx" />
@@ -64,9 +68,13 @@
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
-    <Content Include="Customer\SearchCoupon.aspx" />
+    <Content Include="Customer\SearchCouponByCategory.aspx" />
+    <Content Include="Customer\SearchCouponByLocation.aspx" />
+    <Content Include="Customer\SearchCouponByName.aspx" />
+    <Content Include="Customer\SearchCouponDefault.aspx" />
     <Content Include="Manager\ManagerHomeP.aspx" />
     <Content Include="Manager\ManagerMaster.Master" />
+    <Content Include="Customer\CouponSearch.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +115,13 @@
     <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CouponSearch.Master.cs">
+      <DependentUpon>CouponSearch.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CouponSearch.Master.designer.cs">
+      <DependentUpon>CouponSearch.Master</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHomeP.aspx.cs">
       <DependentUpon>CustomerHomeP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,12 +150,33 @@
     <Compile Include="Customer\SearchBusiness.aspx.designer.cs">
       <DependentUpon>SearchBusiness.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\SearchCoupon.aspx.cs">
-      <DependentUpon>SearchCoupon.aspx</DependentUpon>
+    <Compile Include="Customer\SearchCouponByCategory.aspx.cs">
+      <DependentUpon>SearchCouponByCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\SearchCoupon.aspx.designer.cs">
-      <DependentUpon>SearchCoupon.aspx</DependentUpon>
+    <Compile Include="Customer\SearchCouponByCategory.aspx.designer.cs">
+      <DependentUpon>SearchCouponByCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\SearchCouponByLocation.aspx.cs">
+      <DependentUpon>SearchCouponByLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\SearchCouponByLocation.aspx.designer.cs">
+      <DependentUpon>SearchCouponByLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\SearchCouponByName.aspx.cs">
+      <DependentUpon>SearchCouponByName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\SearchCouponByName.aspx.designer.cs">
+      <DependentUpon>SearchCouponByName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\SearchCouponDefault.aspx.cs">
+      <DependentUpon>SearchCouponDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\SearchCouponDefault.aspx.designer.cs">
+      <DependentUpon>SearchCouponDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

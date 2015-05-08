@@ -8,9 +8,7 @@ namespace Coupon_Web.DAL
 {
     public class Connection
     {
-        private const string URL = @"Data Source=(LocalDB)\v11.0;
-                            AttachDbFilename=C:\Users\matan\OneDrive\האוניברסיטה\סימסטר ד\ניתוח ועיצוב\coupon-web\Coupon-Web\DAL\LocalDB.mdf;
-                            Integrated Security=True";
+        private const string URL = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\ziv-user\Documents\בן גוריון\סמסטר ד'\ניתוח ועיצוב\Milestone2\Coupon-Web\DAL\LocalDB.mdf;Integrated Security=True";
         //|DataDirectory|\LocalDB.mdf;
 
         //singleton pattern
