@@ -13,5 +13,10 @@ namespace PL.Manager
         {
 
         }
+
+        protected void couponReport_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

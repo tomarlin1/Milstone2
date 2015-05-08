@@ -13,5 +13,10 @@ namespace PL.Customer
         {
 
         }
+
+        protected void header_btn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
