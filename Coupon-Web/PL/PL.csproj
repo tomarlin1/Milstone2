@@ -72,6 +72,7 @@
     <Content Include="Customer\SearchCouponByLocation.aspx" />
     <Content Include="Customer\SearchCouponByName.aspx" />
     <Content Include="Customer\SearchCouponDefault.aspx" />
+    <Content Include="Manager\AddCoupon.aspx" />
     <Content Include="Manager\ManagerHomeP.aspx" />
     <Content Include="Manager\ManagerMaster.Master" />
     <Content Include="Customer\CouponSearch.Master" />
@@ -79,8 +80,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Manager\ManagerReport.aspx" />
     <Content Include="SystemManager\SystemManagerHomeP.aspx" />
     <Content Include="SystemManager\SystemMaster.Master" />
+    <Content Include="Report.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -185,6 +188,13 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AddCoupon.aspx.cs">
+      <DependentUpon>AddCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\AddCoupon.aspx.designer.cs">
+      <DependentUpon>AddCoupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerHomeP.aspx.cs">
       <DependentUpon>ManagerHomeP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +209,13 @@
     <Compile Include="Manager\ManagerMaster.Master.designer.cs">
       <DependentUpon>ManagerMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ManagerReport.aspx.cs">
+      <DependentUpon>ManagerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerReport.aspx.designer.cs">
+      <DependentUpon>ManagerReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -211,6 +228,13 @@
     </Compile>
     <Compile Include="RegisterUser.aspx.designer.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.Master.cs">
+      <DependentUpon>Report.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.Master.designer.cs">
+      <DependentUpon>Report.Master</DependentUpon>
     </Compile>
     <Compile Include="SystemManager\SystemManagerHomeP.aspx.cs">
       <DependentUpon>SystemManagerHomeP.aspx</DependentUpon>

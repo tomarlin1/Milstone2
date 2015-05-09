@@ -7,19 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace PL.Manager
 {
-    public partial class ManagerHomeP : System.Web.UI.Page
+    public partial class ManagerReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void couponReport_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
         {
 
         }
