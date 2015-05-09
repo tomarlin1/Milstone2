@@ -73,13 +73,13 @@
     <Content Include="Customer\SearchCouponByName.aspx" />
     <Content Include="Customer\SearchCouponDefault.aspx" />
     <Content Include="Manager\AddCoupon.aspx" />
-    <Content Include="Manager\ManagerHomeP.aspx" />
-    <Content Include="Manager\ManagerMaster.Master" />
     <Content Include="Customer\CouponSearch.Master" />
+    <Content Include="Manager\ManagerMaster.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Manager\ManagerHomeP.aspx" />
     <Content Include="Manager\ManagerReport.aspx" />
     <Content Include="SystemManager\SystemManagerHomeP.aspx" />
     <Content Include="SystemManager\SystemMaster.Master" />
