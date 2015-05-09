@@ -11,7 +11,7 @@ namespace PL.Customer
 {
 
 
-    public partial class SearchCoupon
+    public partial class SearchCouponDefault
     {
     }
 }

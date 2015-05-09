@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PL.Customer
 {
-    public partial class SearchCoupon : System.Web.UI.Page
+    public partial class CouponSearch : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
