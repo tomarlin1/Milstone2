@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using Coupon_Web.DAL;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Coupon_Web.BL
 {
     public class BlRequests
     {
         private Queries _query;
-        
+
 
         public BlRequests()
         {
@@ -43,8 +44,8 @@ namespace Coupon_Web.BL
         {
             return ExistUserForLogin(userName, password) && IsSystemManagerExist(userName);
         }
-        
-        
+
+
         public void InsertCategory(int id, String name, String description)
         {
             String[] values = new String[] { id.ToString(), name, description };
@@ -349,5 +350,33 @@ namespace Coupon_Web.BL
             return _query.isExist("Users", pkNames, pkValues);
         }
 
+        public DataTable selectCouponsName(String couponName)
+        {
+            String[] colums = { "Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate" };
+            String[] pkNames = { "Name" };
+            String[] pkValues = { couponName };
+            String[] tableNames = {"Coupon"};
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums,intersect);
+        }
+
+        public DataTable selectCouponsDetails()
+        {
+            String[] colums = { "Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate" };
+            return _query.selectColumnsFrom("Coupon", colums);
+        }
+
+        public DataTable selectCouponDetailsWithCategory(String categoryName)
+        {
+            String[] colums = { "[Coupon].Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate","[Category].Name as 'Category'" };
+            String[] pkNames = { "[Category].Name" };
+            String[] pkValues = { categoryName };
+            String[] tableNames = { "Coupon","Category","CouponCategories" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[2];
+            intersect[0] = new Tuple<string, string>("[Category].Id", "[CouponCategories].CategoryId");
+            intersect[1] = new Tuple<string, string>("[Coupon].Id", "[CouponCategories].CouponId");
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
     }
+    
 }

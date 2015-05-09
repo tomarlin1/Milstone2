@@ -1,5 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer/CouponSearch.Master" AutoEventWireup="true" CodeBehind="SearchCouponByCategory.aspx.cs" Inherits="PL.Customer.SearchCouponByCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style3 {
+            width: 212px;
+        }
+        .auto-style4 {
+            width: 148px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
             <asp:Panel ID="Panel1" runat="server" Height="262px">
@@ -7,17 +15,7 @@
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -27,7 +25,17 @@
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -47,8 +55,8 @@
                             </asp:TreeView>
                         </td>
                         <td>&nbsp;</td>
-                        <td>
-                            <asp:DropDownList ID="DropDownList1" runat="server">
+                        <td class="auto-style4">
+                            <asp:DropDownList ID="category" runat="server">
                                 <asp:ListItem>Entertainment</asp:ListItem>
                                 <asp:ListItem>Restaurants</asp:ListItem>
                                 <asp:ListItem>Leisure</asp:ListItem>
@@ -56,7 +64,7 @@
                             </asp:DropDownList>
                         </td>
                         <td>
-                            <asp:Button ID="Button1" runat="server" Text="Search" Width="65px" />
+                            <asp:Button ID="Button1" runat="server" Text="Search" Width="65px" OnClick="Button1_Click" />
                         </td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -66,30 +74,19 @@
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>
-                            <asp:GridView ID="GridView1" runat="server" Width="185px">
+                        <td class="auto-style4">
+                            <asp:GridView ID="View" runat="server" Width="185px">
                             </asp:GridView>
                         </td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -99,7 +96,17 @@
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="auto-style4">&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>

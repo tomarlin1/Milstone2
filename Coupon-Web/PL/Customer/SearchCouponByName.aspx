@@ -7,40 +7,21 @@
     .auto-style4 {
         width: 54px;
     }
+        .auto-style9 {
+            width: 208px;
+        }
+        .auto-style10 {
+            width: 188px;
+            height: 20px;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <asp:Panel ID="Panel1" runat="server" Height="262px">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style10" colspan="5"></td>
+            <td rowspan="3">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2">
@@ -56,65 +37,33 @@
             </td>
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">Name:</td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <td class="auto-style9">
+                <asp:TextBox ID="TextBox_Name" runat="server" Width="167px"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Search" Width="118px" OnClick="Button1_Click" />
+                <asp:Button ID="Button_Search" runat="server" Text="Search" Width="118px" OnClick="Button1_Click" />
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>
-                <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
-                    <Columns>
-                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                        <asp:BoundField DataField="ExpiredDate" HeaderText="ExpiredDate" SortExpression="ExpiredDate" />
-                        <asp:BoundField DataField="Business" HeaderText="Business" SortExpression="Business" />
-                    </Columns>
+            <td class="auto-style2" colspan="3">&nbsp;</td>
+            <td class="auto-style9">
+                <asp:GridView ID="View" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="#DCDCDC" />
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
             </td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style2" colspan="6">&nbsp;</td>
         </tr>
     </table>
 </asp:Panel>

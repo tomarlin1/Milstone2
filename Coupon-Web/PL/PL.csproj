@@ -72,8 +72,8 @@
     <Content Include="Customer\SearchCouponByLocation.aspx" />
     <Content Include="Customer\SearchCouponByName.aspx" />
     <Content Include="Customer\SearchCouponDefault.aspx" />
-    <Content Include="Manager\ManagerHomeP.aspx" />
-    <Content Include="Manager\ManagerMaster.Master" />
+    <Content Include="Customer\Manager\ManagerHomeP.aspx" />
+    <Content Include="Customer\Manager\ManagerMaster.Master" />
     <Content Include="Customer\CouponSearch.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -185,18 +185,18 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manager\ManagerHomeP.aspx.cs">
+    <Compile Include="Customer\Manager\ManagerHomeP.aspx.cs">
       <DependentUpon>ManagerHomeP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manager\ManagerHomeP.aspx.designer.cs">
+    <Compile Include="Customer\Manager\ManagerHomeP.aspx.designer.cs">
       <DependentUpon>ManagerHomeP.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manager\ManagerMaster.Master.cs">
+    <Compile Include="Customer\Manager\ManagerMaster.Master.cs">
       <DependentUpon>ManagerMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manager\ManagerMaster.Master.designer.cs">
+    <Compile Include="Customer\Manager\ManagerMaster.Master.designer.cs">
       <DependentUpon>ManagerMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
