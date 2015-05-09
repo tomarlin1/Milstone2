@@ -19,7 +19,7 @@ namespace Coupon_Web.DAL
         {
             try
             {
-                String query = "INSERT INTO [" + tableName + "] values ";
+                String query = "INSERT INTO [" + tableName + "] VALUES ";
                 int size = values.Length;
 
                 //creating place holders in format: @0,@1,@2 etc...

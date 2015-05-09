@@ -51,9 +51,9 @@ namespace Coupon_Web.BL
             String[] values = new String[] { id.ToString(), name, description };
             _query.Insert("Category", values);
         }
-        public void InsertCoupon(int id, String name, double originalMoney, double discountPrice, DateTime expiredDate, int rating, int businessId)
+        public void InsertCoupon(int id, String name, double originalMoney, double discountPrice, DateTime expiredDate,int rating, int businessId)
         {
-            String[] values = new String[] { id.ToString(), name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(), rating.ToString(), businessId.ToString() };
+            String[] values = new String[] { id.ToString(), name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(),rating.ToString(), businessId.ToString(),"False",DateTime.Today.Date.ToString() };
             _query.Insert("Coupon", values);
         }
         public void InsertCouponCategory(int couponId, int categoryId)

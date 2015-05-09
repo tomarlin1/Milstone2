@@ -10,25 +10,16 @@
 namespace PL.Manager {
     
     
-    public partial class ManagerHomeP {
+    public partial class ManagerReport {
         
         /// <summary>
-        /// Label1 control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// getUserName_lbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label getUserName_lbl;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// TreeView1 control.

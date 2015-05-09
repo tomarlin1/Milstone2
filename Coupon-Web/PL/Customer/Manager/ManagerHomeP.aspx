@@ -29,10 +29,6 @@
         .auto-style11 {
             width: 209px;
         }
-        .auto-style12 {
-            height: 30px;
-            width: 209px;
-        }
         .auto-style13 {
             height: 26px;
             width: 104px;
@@ -43,15 +39,10 @@
             text-align: center;
         }
         .auto-style16 {
-            height: 26px;
             width: 185px;
         }
         .auto-style17 {
             width: 185px;
-        }
-        .auto-style18 {
-            width: 185px;
-            height: 30px;
         }
         .auto-style20 {
             width: 77px;
@@ -63,6 +54,10 @@
         .auto-style22 {
             height: 26px;
             width: 77px;
+        }
+        .auto-style23 {
+            width: 185px;
+            font-size: xx-large;
         }
     </style>
 </asp:Content>
@@ -89,9 +84,13 @@
             <td class="auto-style3"></td>
         </tr>
         <tr>
-            <td class="auto-style17">&nbsp;</td>
-            <td class="auto-style11">&nbsp;</td>
-            <td class="auto-style14" rowspan="2">&nbsp; Hello</td>
+            <td class="auto-style23" rowspan="2">
+                <asp:Label ID="Label1" runat="server" Text="Hello"></asp:Label>
+            </td>
+            <td class="auto-style11" rowspan="2">
+                <asp:Label ID="getUserName_lbl" runat="server" style="font-size: xx-large"></asp:Label>
+            </td>
+            <td class="auto-style14" rowspan="2">&nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">&nbsp;</td>
             <td>&nbsp;</td>
@@ -99,11 +98,8 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style18"></td>
-            <td class="auto-style12"></td>
             <td class="auto-style21">
-                <asp:Label ID="getUserName_lbl" runat="server"></asp:Label>
-            </td>
+                &nbsp;</td>
             <td class="auto-style9">&nbsp;</td>
             <td class="auto-style7"></td>
             <td class="auto-style7"></td>
@@ -120,7 +116,17 @@
             <td class="auto-style3"></td>
         </tr>
         <tr>
-            <td class="auto-style16"></td>
+            <td class="auto-style16" rowspan="3">
+                <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                    <Nodes>
+                        <asp:TreeNode Text="Coupon" Value="Coupon">
+                            <asp:TreeNode NavigateUrl="~/Manager/AddCoupon.aspx" Text="Add" Value="Add"></asp:TreeNode>
+                            <asp:TreeNode Text="Delete" Value="Delete"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Log Out" Value="Log Out"></asp:TreeNode>
+                    </Nodes>
+                </asp:TreeView>
+            </td>
             <td class="auto-style10"></td>
             <td class="auto-style13"></td>
             <td class="auto-style22"></td>
@@ -130,23 +136,19 @@
             <td class="auto-style3"></td>
         </tr>
         <tr>
-            <td class="auto-style17">&nbsp;</td>
             <td class="auto-style11">&nbsp;</td>
             <td class="auto-style14">&nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">
-                <asp:Button ID="BussinessReport_btn" runat="server" Height="35px" style="margin-left: 0px" Text="Bussiness Report" Width="150px" OnClick="couponReport_btn_Click" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style17">&nbsp;</td>
             <td class="auto-style11">&nbsp;</td>
             <td class="auto-style14">
-                <asp:Button ID="logOut_btn" runat="server" Height="35px" Text="Log Out" Width="150px" />
-            </td>
+                &nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">
                 &nbsp;</td>
