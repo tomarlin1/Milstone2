@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Report.master.cs" Inherits="PL.Report" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            <asp:Panel ID="Panel1" runat="server" Height="250px">
+                <asp:TreeView ID="TreeView1" runat="server">
+                    <Nodes>
+                        <asp:TreeNode Text="Add" Value="Add"></asp:TreeNode>
+                        <asp:TreeNode Text="Delete" Value="Delete"></asp:TreeNode>
+                    </Nodes>
+                </asp:TreeView>
+            </asp:Panel>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
