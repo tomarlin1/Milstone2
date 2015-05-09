@@ -122,6 +122,7 @@
                         <asp:TreeNode Text="Coupon" Value="Coupon">
                             <asp:TreeNode NavigateUrl="~/Manager/AddCoupon.aspx" Text="Add" Value="Add"></asp:TreeNode>
                             <asp:TreeNode Text="Delete" Value="Delete"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/Customer/SearchCouponDefault.aspx" Text="Search" Value="Search"></asp:TreeNode>
                         </asp:TreeNode>
                         <asp:TreeNode Text="Log Out" Value="Log Out"></asp:TreeNode>
                     </Nodes>
