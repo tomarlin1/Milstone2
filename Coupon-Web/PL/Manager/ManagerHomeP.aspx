@@ -106,7 +106,14 @@
             <td class="auto-style7"></td>
         </tr>
         <tr>
-            <td class="auto-style16"></td>
+            <td class="auto-style16">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                    <CurrentNodeStyle ForeColor="#333333" />
+                    <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                    <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                    <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+                </asp:SiteMapPath>
+            </td>
             <td class="auto-style10"></td>
             <td class="auto-style13"></td>
             <td class="auto-style22"></td>
@@ -117,7 +124,8 @@
         </tr>
         <tr>
             <td class="auto-style16" rowspan="3">
-                <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" DataSourceID="SiteMapDataSource1" ImageSet="Arrows">
+                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                     <Nodes>
                         <asp:TreeNode Text="Coupon" Value="Coupon">
                             <asp:TreeNode NavigateUrl="~/Manager/AddCoupon.aspx" Text="Add" Value="Add"></asp:TreeNode>
@@ -126,7 +134,11 @@
                         </asp:TreeNode>
                         <asp:TreeNode Text="Log Out" Value="Log Out"></asp:TreeNode>
                     </Nodes>
+                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
                 </asp:TreeView>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" StartingNodeUrl="~/Manager/ManagerHomeP.aspx" />
             </td>
             <td class="auto-style10"></td>
             <td class="auto-style13"></td>

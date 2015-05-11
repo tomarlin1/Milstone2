@@ -352,23 +352,29 @@ namespace Coupon_Web.BL
 
         public DataTable selectCouponsName(String couponName)
         {
-            String[] colums = { "Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate" };
-            String[] pkNames = { "Name" };
+            String[] colums = { "[Coupon].Id", "[Coupon].Name", "DiscountPrice as 'Price'", "[Buisness].Name as 'Business'", "ExpiredDate" };
+            String[] pkNames = { "[Coupon].Name" };
             String[] pkValues = { couponName };
-            String[] tableNames = {"Coupon"};
-            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            String[] tableNames = { "Coupon", "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[1];
+            intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
             return _query.select(tableNames, pkNames, pkValues, colums,intersect);
         }
 
         public DataTable selectCouponsDetails()
         {
-            String[] colums = { "Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate" };
-            return _query.selectColumnsFrom("Coupon", colums);
+            String[] colums = { "[Coupon].Id","[Coupon].Name", "DiscountPrice as 'Price'", "[Buisness].Name as 'Business'", "ExpiredDate" };
+            String[] pkNames = {};
+            String[] pkValues = {};
+            String[] tableNames = { "Coupon","Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[1];
+            intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
 
         public DataTable selectCouponDetailsWithCategory(String categoryName)
         {
-            String[] colums = { "[Coupon].Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate","[Category].Name as 'Category'" };
+            String[] colums = { "[Coupon].Id", "[Coupon].Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate", "[Category].Name as 'Category'" };
             String[] pkNames = { "[Category].Name" };
             String[] pkValues = { categoryName };
             String[] tableNames = { "Coupon","Category","CouponCategories" };
@@ -376,6 +382,13 @@ namespace Coupon_Web.BL
             intersect[0] = new Tuple<string, string>("[Category].Id", "[CouponCategories].CategoryId");
             intersect[1] = new Tuple<string, string>("[Coupon].Id", "[CouponCategories].CouponId");
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectBuisnesses()
+        {
+            String[] colums = { "[Buisness].Name as 'title'", "Latitude as 'lat'", "[Buisness].Longitude as 'lng'","[Buisness].Description as 'description'" };
+            DataTable dt = _query.selectColumnsFrom("Buisness", colums);
+            return dt;
         }
     }
     

@@ -38,7 +38,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMaps">
+      <HintPath>..\..\..\..\..\..\..\Desktop\gmaps_v4_1_0_5\GMaps.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,13 +79,15 @@
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
-    <Content Include="Customer\SearchCouponByCategory.aspx" />
-    <Content Include="Customer\SearchCouponByLocation.aspx" />
-    <Content Include="Customer\SearchCouponByName.aspx" />
-    <Content Include="Customer\SearchCouponDefault.aspx" />
+    <Content Include="Methods\SearchCoupon\SearchCouponByCategory.aspx" />
+    <Content Include="Methods\SearchCoupon\SearchCouponByLocation.aspx" />
+    <Content Include="Methods\SearchCoupon\SearchCouponByName.aspx" />
+    <Content Include="Methods\SearchCoupon\SearchCouponDefault.aspx" />
     <Content Include="Manager\AddCoupon.aspx" />
-    <Content Include="Customer\CouponSearch.Master" />
+    <Content Include="Methods\SearchCoupon\CouponSearch.Master" />
     <Content Include="Manager\ManagerMaster.Master" />
+    <Content Include="packages.config" />
+    <Content Include="App_Data\GeoIP\GeoLiteCity.dat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,6 +103,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoginPage.aspx" />
@@ -118,11 +134,11 @@
     <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CouponSearch.Master.cs">
+    <Compile Include="Methods\SearchCoupon\CouponSearch.Master.cs">
       <DependentUpon>CouponSearch.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\CouponSearch.Master.designer.cs">
+    <Compile Include="Methods\SearchCoupon\CouponSearch.Master.designer.cs">
       <DependentUpon>CouponSearch.Master</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerHomeP.aspx.cs">
@@ -153,32 +169,32 @@
     <Compile Include="Customer\SearchBusiness.aspx.designer.cs">
       <DependentUpon>SearchBusiness.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\SearchCouponByCategory.aspx.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByCategory.aspx.cs">
       <DependentUpon>SearchCouponByCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\SearchCouponByCategory.aspx.designer.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByCategory.aspx.designer.cs">
       <DependentUpon>SearchCouponByCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\SearchCouponByLocation.aspx.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByLocation.aspx.cs">
       <DependentUpon>SearchCouponByLocation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\SearchCouponByLocation.aspx.designer.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByLocation.aspx.designer.cs">
       <DependentUpon>SearchCouponByLocation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\SearchCouponByName.aspx.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByName.aspx.cs">
       <DependentUpon>SearchCouponByName.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\SearchCouponByName.aspx.designer.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponByName.aspx.designer.cs">
       <DependentUpon>SearchCouponByName.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\SearchCouponDefault.aspx.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponDefault.aspx.cs">
       <DependentUpon>SearchCouponDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\SearchCouponDefault.aspx.designer.cs">
+    <Compile Include="Methods\SearchCoupon\SearchCouponDefault.aspx.designer.cs">
       <DependentUpon>SearchCouponDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
@@ -264,7 +280,9 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
