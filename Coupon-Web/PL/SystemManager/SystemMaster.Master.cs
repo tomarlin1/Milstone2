@@ -11,7 +11,7 @@ namespace PL.SystemManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lb_userName.Text = (string)Session["Name"];
         }
     }
 }

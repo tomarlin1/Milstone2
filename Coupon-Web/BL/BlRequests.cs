@@ -86,8 +86,9 @@ namespace Coupon_Web.BL
             String[] values = new String[] { userName, friendUserName };
             _query.Insert("Friends", values);
         }
-        public void InsertManager(String userName)
+        public void InsertManager(String userName,String name,String password)
         {
+            InsertUser(userName, name, password);
             String[] values = new String[] { userName };
             _query.Insert("Manager", values);
         }
@@ -211,7 +212,7 @@ namespace Coupon_Web.BL
 
         public void EditBusiness(int id, String fieldToEdit, Object value)
         {
-            String[] pkNames = new String[] { "BuisnessId" };
+            String[] pkNames = new String[] { "[Buisness].Id" };
             String[] pkValues = new String[] { id.ToString() };
             _query.EditField("Buisness", pkNames, pkValues, fieldToEdit, value.ToString());
         }
@@ -358,8 +359,8 @@ namespace Coupon_Web.BL
         public DataTable selectCouponsName(String couponName)
         {
             String[] colums = { "[Coupon].Id", "[Coupon].Name", "DiscountPrice as 'Price'", "[Buisness].Name as 'Business'", "ExpiredDate" };
-            String[] pkNames = { "[Coupon].Name" };
-            String[] pkValues = { couponName };
+            String[] pkNames = { "[Coupon].Name" ,"[Coupon].approve","[Buisness].approve"};
+            String[] pkValues = { couponName, "True", "True" };
             String[] tableNames = { "Coupon", "Buisness" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[1];
             intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
@@ -369,8 +370,8 @@ namespace Coupon_Web.BL
         public DataTable selectCouponsDetails()
         {
             String[] colums = { "[Coupon].Id","[Coupon].Name", "DiscountPrice as 'Price'", "[Buisness].Name as 'Business'", "ExpiredDate" };
-            String[] pkNames = {};
-            String[] pkValues = {};
+            String[] pkNames = {"[Coupon].approve","[Buisness].approve"};
+            String[] pkValues = {"True","True"};
             String[] tableNames = { "Coupon","Buisness" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[1];
             intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
@@ -380,8 +381,8 @@ namespace Coupon_Web.BL
         public DataTable selectCouponDetailsWithCategory(String categoryName)
         {
             String[] colums = { "[Coupon].Id", "[Coupon].Name", "DiscountPrice as 'Price'", "BuisnessId as 'Business'", "ExpiredDate", "[Category].Name as 'Category'" };
-            String[] pkNames = { "[Category].Name" };
-            String[] pkValues = { categoryName };
+            String[] pkNames = { "[Category].Name","[Coupon].approve" };
+            String[] pkValues = { categoryName, "True" };
             String[] tableNames = { "Coupon","Category","CouponCategories" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[2];
             intersect[0] = new Tuple<string, string>("[Category].Id", "[CouponCategories].CategoryId");
@@ -396,14 +397,14 @@ namespace Coupon_Web.BL
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
             if (managerUserName.Length != 0)
             {
-                String[] pkValues = { cityName, managerUserName };
-                String[] pkNames = { "[Buisness].City", "[Buisness].ManagerUserName" };
+                String[] pkValues = { cityName, managerUserName,"True" };
+                String[] pkNames = { "[Buisness].City", "[Buisness].ManagerUserName","[Buisness].approve" };
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             else
             {
-                String[] pkValues = { cityName };
-                String[] pkNames = { "[Buisness].City" };
+                String[] pkValues = { cityName,"True" };
+                String[] pkNames = { "[Buisness].City","[Buiseness].approve" };
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             
@@ -417,14 +418,14 @@ namespace Coupon_Web.BL
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
             if (managerName.Length != 0)
             {
-                String[] pkValues = { managerName };
-                String[] pkNames = { "[Buisness].ManagerUserName"};
+                String[] pkValues = { managerName ,"True"};
+                String[] pkNames = { "[Buisness].ManagerUserName","[Buisness].approve"};
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             else
             {
-                String[] pkValues = { };
-                String[] pkNames = { };
+                String[] pkValues = {"True" };
+                String[] pkNames = {"[Buisness].approve" };
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             
@@ -437,14 +438,14 @@ namespace Coupon_Web.BL
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
             if (managerName.Length != 0)
             {
-                String[] pkValues = { managerName, businessName };
-                String[] pkNames = { "[Buisness].ManagerUserName" , "[Buisness].Name" };
+                String[] pkValues = { managerName, businessName ,"True" };
+                String[] pkNames = { "[Buisness].ManagerUserName" , "[Buisness].Name" ,"[Buisness].approve"};
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             else
             {
-                String[] pkValues = { businessName };
-                String[] pkNames = { "[Buisness].Name" };
+                String[] pkValues = { businessName ,"True" };
+                String[] pkNames = { "[Buisness].Name","[Buisness].approve" };
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
 
@@ -467,6 +468,38 @@ namespace Coupon_Web.BL
             String[] pkValues = {"True","True" };
             String[] tableNames = { "Buisness","Coupon" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectCouponApprove()
+        {
+            String[] colums = { "[Coupon].Id", "[Coupon].Name","[Buisness].Name as 'Business Name'","[Coupon].addedDate as 'Added Date'" };
+            String[] pkNames = { "[Coupon].approve", "[Buisness].approve" };
+            String[] pkValues = { "False", "True" };
+            String[] tableNames = { "Buisness", "Coupon" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[1];
+            intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectBusinessApprove()
+        {
+            String[] colums = { "[Buisness].Id", "[Buisness].Name", "[Buisness].Address", "[Buisness].Description", "[Buisness].City" };
+            String[] pkNames = {"[Buisness].approve" };
+            String[] pkValues = { "False" };
+            String[] tableNames = { "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectCustomerHistory(String userName)
+        {
+            String[] colums = { "[Coupon].Name", "[Deal].PaymentMethod", "[Deal].SerialKey" };
+            String[] pkNames = { "[Deal].CustomerUserName" };
+            String[] pkValues = { userName };
+            String[] tableNames = { "Deal","Coupon" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[1];
+            intersect[0] = new Tuple<string, string>("[Deal].CouponId", "[Coupon].Id");
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
     }

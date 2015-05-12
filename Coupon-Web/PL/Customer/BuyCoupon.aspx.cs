@@ -18,5 +18,10 @@ namespace PL.Customer
         {
 
         }
+
+        protected void purchaseCoupon_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

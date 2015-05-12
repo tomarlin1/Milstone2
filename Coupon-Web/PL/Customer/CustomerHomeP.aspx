@@ -18,10 +18,6 @@
         .auto-style7 {
             height: 30px;
         }
-        .auto-style9 {
-            width: 216px;
-            height: 30px;
-        }
         .auto-style10 {
             height: 26px;
             width: 209px;
@@ -139,8 +135,7 @@
             <td class="auto-style14">&nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">
-                <asp:Button ID="searchCoupon_btn" runat="server" Height="35px" style="margin-left: 0px" Text="Search Coupon" Width="150px" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -161,8 +156,7 @@
             <td class="auto-style14">&nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">
-                <asp:Button ID="historyCoupon_btn" runat="server" Height="35px" Text="Coupon History" Width="150px" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -181,12 +175,10 @@
             <td class="auto-style17">&nbsp;</td>
             <td class="auto-style11">&nbsp;</td>
             <td class="auto-style14">
-                <asp:Button ID="logOut_btn" runat="server" Height="35px" Text="Log Out" Width="150px" />
-            </td>
+                &nbsp;</td>
             <td class="auto-style20">&nbsp;</td>
             <td class="auto-style6">
-                <asp:Button ID="friendsReport_btn" runat="server" Height="35px" Text="Friend's Report" Width="150px" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

@@ -71,16 +71,18 @@
       <DependentUpon>LocalDB.mdf</DependentUpon>
     </Content>
     <Content Include="Customer\BuyCoupon.aspx" />
-    <Content Include="Customer\CouponHistory.aspx" />
     <Content Include="Customer\CouponNotifications.aspx" />
     <Content Include="Customer\CustomerHomeP.aspx" />
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
+    <Content Include="Customer\History.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddCoupon.aspx" />
     <Content Include="Methods\AddOperation\DeleteBusiness.aspx" />
     <Content Include="Methods\AddOperation\DeleteCoupon.aspx" />
+    <Content Include="Methods\ApproveOperations\ApproveBusiness.aspx" />
+    <Content Include="Methods\ApproveOperations\ApproveCoupon.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByCity.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByName.aspx" />
@@ -100,6 +102,7 @@
     </None>
     <Content Include="Manager\ManagerHomeP.aspx" />
     <Content Include="Manager\ManagerReport.aspx" />
+    <Content Include="RegisterManager.aspx" />
     <Content Include="SystemManager\SystemManagerHomeP.aspx" />
     <Content Include="SystemManager\SystemMaster.Master" />
     <Content Include="Report.Master" />
@@ -126,19 +129,19 @@
     <Compile Include="Customer\BuyCoupon.aspx.designer.cs">
       <DependentUpon>BuyCoupon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CouponHistory.aspx.cs">
-      <DependentUpon>CouponHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\CouponHistory.aspx.designer.cs">
-      <DependentUpon>CouponHistory.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Customer\CouponNotifications.aspx.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\AddOperation\AddBusiness.aspx.cs">
       <DependentUpon>AddBusiness.aspx</DependentUpon>
@@ -167,6 +170,20 @@
     </Compile>
     <Compile Include="Methods\AddOperation\DeleteCoupon.aspx.designer.cs">
       <DependentUpon>DeleteCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\ApproveOperations\ApproveBusiness.aspx.cs">
+      <DependentUpon>ApproveBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\ApproveOperations\ApproveBusiness.aspx.designer.cs">
+      <DependentUpon>ApproveBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\ApproveOperations\ApproveCoupon.aspx.cs">
+      <DependentUpon>ApproveCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\ApproveOperations\ApproveCoupon.aspx.designer.cs">
+      <DependentUpon>ApproveCoupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SearchBusiness\SearchBusiness.Master.cs">
       <DependentUpon>SearchBusiness.Master</DependentUpon>
@@ -299,6 +316,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterManager.aspx.cs">
+      <DependentUpon>RegisterManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterManager.aspx.designer.cs">
+      <DependentUpon>RegisterManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegisterUser.aspx.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>

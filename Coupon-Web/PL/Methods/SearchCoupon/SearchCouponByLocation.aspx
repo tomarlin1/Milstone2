@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Methods/SearchCoupon/CouponSearch.Master" AutoEventWireup="true" CodeBehind="SearchCouponByLocation.aspx.cs" Inherits="PL.Customer.SearchCouponByLocation" %>
 
-<%@ Register Assembly="GMaps" Namespace="Subgurim.Controles" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style3 {
