@@ -62,6 +62,19 @@
             width: 448px;
             height: 44px;
         }
+        .auto-style22 {
+            width: 446px;
+            text-align: right;
+            height: 48px;
+        }
+        .auto-style23 {
+            width: 219px;
+            height: 48px;
+        }
+        .auto-style24 {
+            width: 448px;
+            height: 48px;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +101,28 @@
                 </td>
                 <td class="auto-style13">
                     <asp:RequiredFieldValidator ID="NameVali" runat="server" ControlToValidate="TbName" ErrorMessage="Name is Required." ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style22">Email:</td>
+                <td class="auto-style23">
+                    <asp:TextBox ID="TbEmail" runat="server" Height="28px" Width="214px"></asp:TextBox>
+                </td>
+                <td class="auto-style24">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TbEmail" ErrorMessage="Email is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TbEmail" ErrorMessage="Not an Email Address" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style11">Phone Number:</td>
+                <td class="auto-style12">
+                    <asp:TextBox ID="TbPhoneNumber" runat="server" Height="28px" Width="214px"></asp:TextBox>
+                </td>
+                <td class="auto-style13">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TbPhoneNumber" ErrorMessage="Phone Number is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TbPhoneNumber" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="(^05[0-9]{8}$)|^0[123456789]{1}[^0\D]{1}\d{6}$">Not a Phone Number</asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -121,7 +156,9 @@
             </tr>
             <tr>
                 <td class="auto-style14">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5">
+                    <asp:Label ID="errorlbl" runat="server"></asp:Label>
+                </td>
                 <td class="auto-style10">&nbsp;</td>
             </tr>
         </table>

@@ -61,8 +61,9 @@ namespace Coupon_Web.BL
             String[] values = new String[] { couponId.ToString(), categoryId.ToString() };
             _query.Insert("CouponCategories", values);
         }
-        public void InsertCustomer(String userName, String email, String phone)
+        public void InsertCustomer(String userName, String email, String phone , String name, String password)
         {
+            InsertUser(userName, name, password);
             String[] values = new String[] { userName, email, phone };
             _query.Insert("Customer", values);
         }
@@ -423,6 +424,26 @@ namespace Coupon_Web.BL
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
             
+        }
+
+        public DataTable selectBuisnessesByName(String businessName, String managerName)
+        {
+            String[] colums = { "[Buisness].Name", "[Buisness].Address", "[Buisness].Description", "[Buisness].City" };
+            String[] tableNames = { "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            if (managerName.Length != 0)
+            {
+                String[] pkValues = { managerName, businessName };
+                String[] pkNames = { "[Buisness].ManagerUserName" , "[Buisness].Name" };
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+            else
+            {
+                String[] pkValues = { businessName };
+                String[] pkNames = { "[Buisness].Name" };
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+
         }
 
         public DataTable getUserPersonalName(String userName)

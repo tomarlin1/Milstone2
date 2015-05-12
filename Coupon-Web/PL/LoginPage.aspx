@@ -60,6 +60,7 @@
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style5">
                     <asp:Button ID="ButtonLogin" runat="server" style="text-align: justify" Text="Login" Width="97px" OnClick="ButtonLogin_Click" />
+                    <asp:Button ID="ButtonRegister" runat="server" OnClick="ButtonRegister_Click" Text="Register" Width="97px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
