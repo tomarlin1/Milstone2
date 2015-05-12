@@ -376,7 +376,7 @@
         </tr>
         <tr>
             <td class="auto-style29">
-                <asp:Button ID="purchaseCoupon_btn" runat="server" Text="Purchase Coupon" Width="140px" />
+                <asp:Button ID="purchaseCoupon_btn" runat="server" Text="Purchase Coupon" Width="140px" OnClick="purchaseCoupon_btn_Click" />
             </td>
             <td class="auto-style30"></td>
             <td class="auto-style31" colspan="2"></td>

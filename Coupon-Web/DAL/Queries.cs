@@ -252,12 +252,13 @@ namespace Coupon_Web.DAL
                             pkCond += " AND ";
                     }
 
-                    for (int i = 0; i < intersect.Length;i++ )
+                    for (int i = 0; i < intersect.Length  ;i++ )
                     {
                         pkCond += intersect[i].Item1 + "=" + intersect[i].Item2;
                         if (i < intersect.Length - 1)
                             pkCond += " AND ";
                     }
+
 
                     query += pkCond;
 
@@ -286,7 +287,23 @@ namespace Coupon_Web.DAL
                 }
                 else
                 {
-                     cmdSql= new SqlCommand(query, _conn.getSqlCon());
+                    
+                     if (intersect.Length != 0)
+                     {
+                         query += " WHERE ";
+                         String pkCond = "";
+                         for (int i = 0; i < intersect.Length; i++)
+                         {
+                             pkCond += intersect[i].Item1 + "=" + intersect[i].Item2;
+                             if (i < intersect.Length - 1)
+                                 pkCond += " AND ";
+                         }
+
+                         query += pkCond;
+                     }
+
+                     cmdSql = new SqlCommand(query, _conn.getSqlCon());
+
                 }
 
                 //execute.
