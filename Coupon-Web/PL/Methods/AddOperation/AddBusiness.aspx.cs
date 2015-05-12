@@ -1,4 +1,5 @@
 ﻿using Coupon_Web.BL;
+using Coupon_Web.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -81,7 +82,7 @@ namespace PL.Methods.AddOperation
             string locLatitude = addressParmes[1];
             string locLongitude = addressParmes[2];
 
-            request.InsertBusiness(299, name, address, description, userName, locLatitude, locLongitude, city);
+            request.InsertBusiness(name, address, description, userName, locLatitude, locLongitude, city);
             Response.Redirect(nextPage); 
         }
     }

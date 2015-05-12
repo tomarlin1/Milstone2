@@ -52,7 +52,7 @@ namespace PL.Methods.AddOperation
             int bussinessId = int.Parse(txtBoxBusinessID.Text);
 
           
-            request.InsertCoupon(100, couponName, couponPrice, couponPrice, couponExpiredDate, 1, bussinessId);
+            request.InsertCoupon(couponName, couponPrice, couponPrice, couponExpiredDate, 1, bussinessId);
             Response.Redirect(nextPage); 
         }
 

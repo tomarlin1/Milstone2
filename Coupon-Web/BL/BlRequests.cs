@@ -21,9 +21,10 @@ namespace Coupon_Web.BL
         /// <the next functions are related to various Insert's functions.>
         /// 
         /// </summary>
-        public void InsertBusiness(int id, String name, String address, String description, String managerUserName, string latitude, string longitude, string city)
+        public void InsertBusiness(String name, String address, String description, String managerUserName, string latitude, string longitude, string city)
         {
-            String[] values = new String[] { id.ToString(), name, address, description, managerUserName, "false", latitude, longitude, city};
+            String id = (_query.SelectMaxID("Buisness") + 1).ToString();
+            String[] values = new String[] { id, name, address, description, managerUserName, "false", latitude, longitude, city};
             _query.Insert("Buisness", values);
         }
         public Boolean ExistUserForLogin(string userName, string password)
@@ -46,14 +47,16 @@ namespace Coupon_Web.BL
         }
 
 
-        public void InsertCategory(int id, String name, String description)
+        public void InsertCategory(String name, String description)
         {
-            String[] values = new String[] { id.ToString(), name, description };
+            String id = (_query.SelectMaxID("Category") + 1).ToString();
+            String[] values = new String[] { id, name, description };
             _query.Insert("Category", values);
         }
-        public void InsertCoupon(int id, String name, double originalMoney, double discountPrice, DateTime expiredDate,int rating, int businessId)
+        public void InsertCoupon(String name, double originalMoney, double discountPrice, DateTime expiredDate,int rating, int businessId)
         {
-            String[] values = new String[] { id.ToString(), name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(),rating.ToString(), businessId.ToString(),"False",DateTime.Today.Date.ToString() };
+            String id = (_query.SelectMaxID("Coupon") + 1).ToString();
+            String[] values = new String[] { id, name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(), rating.ToString(), businessId.ToString(), "False", DateTime.Today.Date.ToString() };
             _query.Insert("Coupon", values);
         }
         public void InsertCouponCategory(int couponId, int categoryId)
@@ -72,9 +75,10 @@ namespace Coupon_Web.BL
             String[] values = new String[] { CustomerUserName, categoryId.ToString() };
             _query.Insert("CustomerPerferences", values);
         }
-        public void InsertDeal(int id, int status, String serialKey, int couponId, String customerUserName, String paymentMethod)
+        public void InsertDeal(int status, String serialKey, int couponId, String customerUserName, String paymentMethod)
         {
-            String[] values = new String[] { id.ToString(), status.ToString(), serialKey, couponId.ToString(), customerUserName, paymentMethod };
+            String id = (_query.SelectMaxID("Deal") + 1).ToString();
+            String[] values = new String[] { id, status.ToString(), serialKey, couponId.ToString(), customerUserName, paymentMethod };
             _query.Insert("Deal", values);
         }
         public void InsertFriend(String userName, String friendUserName)

@@ -14,7 +14,32 @@ namespace Coupon_Web.DAL
 
         public Queries(){}
 
-        //
+        public int SelectMaxID(string tableName)
+        {
+            int ret = 0;
+            try
+            {
+                String query = "SELECT MAX(Id) FROM [" + tableName + "]";
+                //create sqlcommand.
+                SqlCommand cmdSql = new SqlCommand(query, _conn.getSqlCon());
+                //execute.
+                _conn.open();
+                String maxStr = cmdSql.ExecuteScalar().ToString();
+                ret = int.Parse(maxStr);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                _conn.close();
+            }
+            return ret;
+        }
+
+
         public void Insert(String tableName, String[] values)
         {
             try

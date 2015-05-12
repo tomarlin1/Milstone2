@@ -141,7 +141,9 @@
                 <td class="auto-style5">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style7"></td>
+                <td class="auto-style7">
+                    <asp:Label ID="lblmax" runat="server" Text="maxID:"></asp:Label>
+                </td>
                 <td class="auto-style8"></td>
                 <td class="auto-style8"></td>
                 <td class="auto-style9"></td>
