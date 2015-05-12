@@ -73,11 +73,15 @@ namespace PL.Methods.AddOperation
             string name = txtBoxName.Text;
             string address = txtBoxAddress.Text;
             string description = txtBoxDescription.Text;
-            string userName = txtBoxUserName.Text;
+            string userName = (string)Page.Session["UserName"];
+            string city = txtBoxCity.Text;
 
             string[] addressParmes = setAddressLcation(address);
+            address = addressParmes[0];
+            string locLatitude = addressParmes[1];
+            string locLongitude = addressParmes[2];
 
-            request.InsertBusiness(299, name, address, description, userName);
+            request.InsertBusiness(299, name, address, description, userName, locLatitude, locLongitude, city);
             Response.Redirect(nextPage); 
         }
     }

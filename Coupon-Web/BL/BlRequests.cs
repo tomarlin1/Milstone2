@@ -21,9 +21,9 @@ namespace Coupon_Web.BL
         /// <the next functions are related to various Insert's functions.>
         /// 
         /// </summary>
-        public void InsertBusiness(int id, String name, String address, String description, String managerUserName)
+        public void InsertBusiness(int id, String name, String address, String description, String managerUserName, string latitude, string longitude, string city)
         {
-            String[] values = new String[] { id.ToString(), name, address, description, managerUserName };
+            String[] values = new String[] { id.ToString(), name, address, description, managerUserName, "false", latitude, longitude, city};
             _query.Insert("Buisness", values);
         }
         public Boolean ExistUserForLogin(string userName, string password)

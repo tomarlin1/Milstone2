@@ -79,6 +79,8 @@
     <Content Include="Customer\SearchBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddCoupon.aspx" />
+    <Content Include="Methods\AddOperation\DeleteBusiness.aspx" />
+    <Content Include="Methods\AddOperation\DeleteCoupon.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByCity.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByName.aspx" />
@@ -151,6 +153,20 @@
     </Compile>
     <Compile Include="Methods\AddOperation\AddCoupon.aspx.designer.cs">
       <DependentUpon>AddCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\AddOperation\DeleteBusiness.aspx.cs">
+      <DependentUpon>DeleteBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\AddOperation\DeleteBusiness.aspx.designer.cs">
+      <DependentUpon>DeleteBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\AddOperation\DeleteCoupon.aspx.cs">
+      <DependentUpon>DeleteCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\AddOperation\DeleteCoupon.aspx.designer.cs">
+      <DependentUpon>DeleteCoupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SearchBusiness\SearchBusiness.Master.cs">
       <DependentUpon>SearchBusiness.Master</DependentUpon>

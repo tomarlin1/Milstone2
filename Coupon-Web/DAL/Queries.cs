@@ -40,7 +40,21 @@ namespace Coupon_Web.DAL
                 //replace the given values into placeholders.
                 for (int i = 0; i < size; i++)
                 {
-                    cmdSql.Parameters.AddWithValue("@" + i, values[i]);
+                    switch (values[i])
+                    {
+                        case "True":
+                            bool tr = true;
+                            cmdSql.Parameters.AddWithValue("@" + i, tr);
+                            break;
+                        case "False":
+                            bool fl = false;
+                            cmdSql.Parameters.AddWithValue("@" + i, fl);
+                            break;
+                        default:
+                            cmdSql.Parameters.AddWithValue("@" + i, values[i]);
+                            break;
+                    }
+
                 }
                 //execute.
                 _conn.open();
