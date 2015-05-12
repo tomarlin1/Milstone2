@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PL.Manager {
+namespace PL.Methods.AddOperation {
     
     
-    public partial class AddCoupon {
+    public partial class AddBusiness {
         
         /// <summary>
         /// form1 control.
@@ -20,15 +20,6 @@ namespace PL.Manager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// SiteMapPath1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
         /// SiteMapDataSource1 control.
@@ -49,13 +40,13 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.TreeView TreeView2;
         
         /// <summary>
-        /// Label2 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Label3 control.
@@ -76,13 +67,22 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// getCouponName_tb control.
+        /// txtBoxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox getCouponName_tb;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxName;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// Label5 control.
@@ -94,13 +94,22 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// getCouponId_tb control.
+        /// txtBoxAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox getCouponId_tb;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxAddress;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// Label6 control.
@@ -112,40 +121,22 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// getCouponPrice_tb control.
+        /// txtBoxDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox getCouponPrice_tb;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxDescription;
         
         /// <summary>
-        /// Label9 control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
-        
-        /// <summary>
-        /// Label10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
-        
-        /// <summary>
-        /// Label11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// Label7 control.
@@ -157,31 +148,22 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// getDay_ddl control.
+        /// txtBoxUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList getDay_ddl;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxUserName;
         
         /// <summary>
-        /// getMonth_ddl control.
+        /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList getMonth_ddl;
-        
-        /// <summary>
-        /// getYear_ddl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList getYear_ddl;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// Label8 control.
@@ -193,30 +175,30 @@ namespace PL.Manager {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// getCouponBusinessId_TB control.
+        /// txtBoxCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox getCouponBusinessId_TB;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxCity;
         
         /// <summary>
-        /// addCoupon_btn control.
+        /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addCoupon_btn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// error_lbl control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label error_lbl;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
     }
 }

@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,6 +77,8 @@
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
+    <Content Include="Methods\AddOperation\AddBusiness.aspx" />
+    <Content Include="Methods\AddOperation\AddCoupon.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByCity.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessDefault.aspx" />
@@ -83,7 +86,6 @@
     <Content Include="Methods\SearchCoupon\SearchCouponByLocation.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByName.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponDefault.aspx" />
-    <Content Include="Manager\AddCoupon.aspx" />
     <Content Include="Methods\SearchCoupon\CouponSearch.Master" />
     <Content Include="Manager\ManagerMaster.Master" />
     <Content Include="packages.config" />
@@ -134,6 +136,20 @@
     </Compile>
     <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\AddOperation\AddBusiness.aspx.cs">
+      <DependentUpon>AddBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\AddOperation\AddBusiness.aspx.designer.cs">
+      <DependentUpon>AddBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\AddOperation\AddCoupon.aspx.cs">
+      <DependentUpon>AddCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\AddOperation\AddCoupon.aspx.designer.cs">
+      <DependentUpon>AddCoupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SearchBusiness\SearchBusiness.Master.cs">
       <DependentUpon>SearchBusiness.Master</DependentUpon>
@@ -232,13 +248,6 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Manager\AddCoupon.aspx.cs">
-      <DependentUpon>AddCoupon.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Manager\AddCoupon.aspx.designer.cs">
-      <DependentUpon>AddCoupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ManagerHomeP.aspx.cs">
       <DependentUpon>ManagerHomeP.aspx</DependentUpon>
