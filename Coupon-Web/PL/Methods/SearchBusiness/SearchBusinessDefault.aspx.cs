@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PL.Methods.SearchBuissnes
+namespace PL.Methods.SearchBusiness
 {
     public partial class SearchBusinessDefault : System.Web.UI.Page
     {
