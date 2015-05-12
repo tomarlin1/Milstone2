@@ -11,50 +11,5 @@ namespace PL.SystemManager {
     
     
     public partial class SystemManagerHomeP {
-        
-        /// <summary>
-        /// getUserName_lbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label getUserName_lbl;
-        
-        /// <summary>
-        /// couponReport_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button couponReport_btn;
-        
-        /// <summary>
-        /// bussinessReport_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bussinessReport_btn;
-        
-        /// <summary>
-        /// logOut_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logOut_btn;
-        
-        /// <summary>
-        /// userReport_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button userReport_btn;
     }
 }

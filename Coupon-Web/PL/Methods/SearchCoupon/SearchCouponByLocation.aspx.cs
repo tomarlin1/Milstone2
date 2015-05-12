@@ -36,7 +36,6 @@ namespace PL.Customer
         {
             BlRequests bl = new BlRequests();
             DataTable dt = bl.selectCoupons();
-            int x = dt.Rows.Count;
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
             Dictionary<string, object> row;

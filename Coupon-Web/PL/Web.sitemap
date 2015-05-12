@@ -39,14 +39,22 @@
         <siteMapNode title="Coupon" description="Coupon operations base node" >
           <siteMapNode title="Add" description="Add Coupon" url="" />
           <siteMapNode title="Delete" description="Delete Coupon"  />
-          <siteMapNode title="Search" description="Search Owned Coupon"  />
           <siteMapNode title="Approve" description="Approve Coupons"  />
+          <siteMapNode title="Search" description="Search Coupon" url="~/Methods/SearchCoupon/SearchCouponDefault.aspx?view=systemmanage" >
+            <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx?view=systemmanage" />
+            <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx?view=systemmanage" />
+            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx?view=systemmanage" />
+          </siteMapNode>
         </siteMapNode>
-        <siteMapNode title="Business" description="Business operations base node" >
+         <siteMapNode title="Business" description="Business operations base node" >
+          <siteMapNode title="Approve" description="Edit Business" url="" />
           <siteMapNode title="Add" description="Add Business" url="" />
-          <siteMapNode title="Delete" description="Delete Business" url="" />
-          <siteMapNode title="Search" description="Search Business"  />
-          <siteMapNode title="Approve" description="Approve Businesses"  />
+          <siteMapNode title="Delete" description="Delete Business"  />
+          <siteMapNode title="Search" description="Business Coupon" url="~/Methods/SearchBusiness/SearchBusinessDefault.aspx?view=systemmanager" >
+            <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchBusiness/SearchBusinessByName.aspx?view=systemmanager" />
+            <siteMapNode title="By City" description="Search by City" url="~/Methods/SearchBusiness/SearchBusinessByCity.aspx?view=systemmanager" />
+            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchBusiness/SearchBusinessByLocation.aspx?view=systemmanager" />
+          </siteMapNode>
         </siteMapNode>
       </siteMapNode>
   </siteMapNode>
