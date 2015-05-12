@@ -15,6 +15,22 @@ namespace PL.Customer
         BlRequests _requests;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (SiteMapDataSource1 != null)
+            {
+                switch ((string)Session["User"])
+                {
+                    case "Customer":
+                        SiteMapDataSource1.StartingNodeUrl = "~/Customer/CustomerHomeP.aspx";
+                        break;
+                    case "Manager":
+                        SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx";
+                        break;
+                    case "System Manager":
+                        SiteMapDataSource1.StartingNodeUrl = "~/SystemManager/SystemManagerHomeP.aspx";
+                        break;
+                }
+            }
             _requests = new BlRequests();
             _dt = _requests.selectCouponDetailsWithCategory(category.Text);
             View.DataSource = _dt;

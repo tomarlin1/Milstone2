@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PL.Manager
+namespace PL.Methods.SearchBuissnes
 {
-    public partial class ManagerMaster : System.Web.UI.MasterPage
+    public partial class SearchBusinessDefault : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lb_userName.Text = (string)Session["UserName"];
+
         }
     }
 }

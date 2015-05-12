@@ -14,12 +14,23 @@ namespace PL.Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (SiteMapDataSource1 != null)
+            {
+                switch ((string)Session["User"])
+                {
+                    case "Manager":
+                        SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx";
+                        break;
+                    case "System Manager":
+                        SiteMapDataSource1.StartingNodeUrl = "~/SystemManager/SystemManagerHomeP.aspx";
+                        break;
+                }
+            }
         }
 
         protected void addCoupon_btn_Click(object sender, EventArgs e)
         {
-            string nextPage = "~/Manager/ManagerHomeP.aspx";
+            string nextPage = SiteMapDataSource1.StartingNodeUrl;
             BlRequests request = new BlRequests();
          
             int couponId = int.Parse(getCouponId_tb.Text);

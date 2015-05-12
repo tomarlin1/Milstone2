@@ -27,11 +27,6 @@
             width: 209px;
         }
         .auto-style11 {
-            width: 209px;
-        }
-        .auto-style12 {
-            height: 30px;
-            width: 209px;
         }
         .auto-style13 {
             height: 26px;
@@ -60,13 +55,13 @@
         .auto-style20 {
             width: 135px;
         }
-        .auto-style21 {
-            height: 30px;
-            width: 135px;
+        .auto-style22 {
+            font-size: xx-large;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
     <table class="auto-style1">
         <tr>
             <td class="auto-style16"></td>
@@ -90,21 +85,15 @@
         </tr>
         <tr>
             <td class="auto-style17">&nbsp;</td>
-            <td class="auto-style11">&nbsp;</td>
-            <td class="auto-style14" rowspan="2">&nbsp; Hello</td>
-            <td class="auto-style20">&nbsp;</td>
-            <td class="auto-style6">&nbsp;</td>
+            <td class="auto-style11" colspan="4" rowspan="2">&nbsp; <span class="auto-style22">Welcome Back! </span>
+                <asp:Label ID="getUserName_lbl" runat="server" CssClass="auto-style22"></asp:Label>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style18"></td>
-            <td class="auto-style12"></td>
-            <td class="auto-style21">
-                <asp:Label ID="getUserName_lbl" runat="server"></asp:Label>
-            </td>
-            <td class="auto-style9">&nbsp;</td>
             <td class="auto-style7"></td>
             <td class="auto-style7"></td>
             <td class="auto-style7"></td>

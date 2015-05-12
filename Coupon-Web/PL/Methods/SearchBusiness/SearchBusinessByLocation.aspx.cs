@@ -1,27 +1,22 @@
 ﻿using Coupon_Web.BL;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 
-namespace PL.Customer
+namespace PL.Methods.SearchBusiness
 {
-    public partial class SearchCouponByLocation : System.Web.UI.Page
+    public partial class SearchBusinessByLocation : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (SiteMapDataSource1 != null)
             {
                 switch ((string)Session["User"])
                 {
-                    case "Customer":
-                        SiteMapDataSource1.StartingNodeUrl = "~/Customer/CustomerHomeP.aspx";
-                        break;
                     case "Manager":
                         SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx";
                         break;
@@ -35,7 +30,14 @@ namespace PL.Customer
         public string ConvertDataTabletoString()
         {
             BlRequests bl = new BlRequests();
-            DataTable dt = bl.selectCoupons();
+            DataTable dt;
+            string user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+                dt = bl.selectBuisnesses((String)Session["UserName"]);
+            else
+            {
+                dt = bl.selectBuisnesses("");
+            }
             int x = dt.Rows.Count;
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
@@ -51,8 +53,5 @@ namespace PL.Customer
             }
             return serializer.Serialize(rows);
         }
-
     }
-
-    
 }

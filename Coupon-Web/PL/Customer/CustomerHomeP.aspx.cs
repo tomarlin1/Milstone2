@@ -11,7 +11,7 @@ namespace PL.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            getUserName_lbl.Text = (string)Session["UserName"];
         }
 
         protected void header_btn_TextChanged(object sender, EventArgs e)

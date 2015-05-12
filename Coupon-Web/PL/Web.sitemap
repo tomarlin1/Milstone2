@@ -8,7 +8,7 @@
               <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx" />
               <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx" />
               <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx" />
-              </siteMapNode>
+            </siteMapNode>
             <siteMapNode title="History" description="History Coupon"  />
             <siteMapNode title="ViewFriends" description="View friend's Coupon"  />
           </siteMapNode>
@@ -18,13 +18,20 @@
           <siteMapNode title="Edit" description="Edit Coupon" url="" />
           <siteMapNode title="Add" description="Add Coupon" url="~/Manager/AddCoupon.aspx" />
           <siteMapNode title="Delete" description="Delete Coupon"  />
-          <siteMapNode title="Search" description="Search Owned Coupon"  />
+          <siteMapNode title="Search" description="Search Coupon" url="~/Methods/SearchCoupon/SearchCouponDefault.aspx?view=manager" >
+            <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx?view=manager" />
+            <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx?view=manager" />
+            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx?view=manager" />
+          </siteMapNode>
         </siteMapNode>
         <siteMapNode title="Business" description="Business operations base node" >
           <siteMapNode title="Edit" description="Edit Business" url="" />
           <siteMapNode title="Add" description="Add Business" url="" />
           <siteMapNode title="Delete" description="Delete Business"  />
-          <siteMapNode title="Search" description="Search Business"  />
+          <siteMapNode title="Search" description="Business Coupon" url="~/Methods/SearchBusiness/SearchBusinessDefault.aspx" >
+            <siteMapNode title="By City" description="Search by City" url="~/Methods/SearchBusiness/SearchBusinessByCity.aspx" />
+            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchBusiness/SearchBusinessByLocation.aspx" />
+          </siteMapNode>
         </siteMapNode>
       </siteMapNode>
       <siteMapNode title="Home" description="System Manager Home Page" url="~/SystemManager/SystemManagerHomeP.aspx" >
@@ -38,7 +45,7 @@
         <siteMapNode title="Business" description="Business operations base node" >
           <siteMapNode title="Edit" description="Edit Business" url="" />
           <siteMapNode title="Add" description="Add Business" url="" />
-          <siteMapNode title="Delete" description="Delete Business"  />
+          <siteMapNode title="Delete" description="Delete Business" url="" />
           <siteMapNode title="Search" description="Search Business"  />
           <siteMapNode title="Approve" description="Approve Businesses"  />
         </siteMapNode>

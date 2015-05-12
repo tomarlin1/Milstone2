@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PL.Customer {
+namespace PL.Methods.SearchBusiness {
     
     
-    public partial class SearchCouponByLocation {
-        
-        /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+    public partial class SearchBusinessByLocation {
         
         /// <summary>
         /// SiteMapPath1 control.

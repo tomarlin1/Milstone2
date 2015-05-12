@@ -289,7 +289,7 @@ namespace Coupon_Web.BL
         {
             String[] pkNames = { "UserName" };
             String[] pkValues = new String[] { userName };
-            return _query.isExist("", pkNames, pkValues);
+            return _query.isExist("Customer", pkNames, pkValues);
         }
 
         public bool IsCustomerPreferenceExist(String userName, int categoryId)
@@ -384,11 +384,65 @@ namespace Coupon_Web.BL
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
 
-        public DataTable selectBuisnesses()
+        public DataTable selectBusinessByCity(String cityName,String managerUserName)
         {
-            String[] colums = { "[Buisness].Name as 'title'", "Latitude as 'lat'", "[Buisness].Longitude as 'lng'","[Buisness].Description as 'description'" };
-            DataTable dt = _query.selectColumnsFrom("Buisness", colums);
-            return dt;
+            String[] colums = { "[Buisness].Id", "[Buisness].Name", "[Buisness].Address", "[Buisness].Description", "[Buisness].City" };
+            String[] tableNames = { "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            if (managerUserName.Length != 0)
+            {
+                String[] pkValues = { cityName, managerUserName };
+                String[] pkNames = { "[Buisness].City", "[Buisness].ManagerUserName" };
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+            else
+            {
+                String[] pkValues = { cityName };
+                String[] pkNames = { "[Buisness].City" };
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+            
+        }
+
+
+        public DataTable selectBuisnesses(String managerName)
+        {
+            String[] colums = { "[Buisness].Name as 'title'", "[Buisness].Latitude as 'lat'", "[Buisness].Longitude as 'lng'", "[Buisness].Name as 'description'" };
+            String[] tableNames = { "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            if (managerName.Length != 0)
+            {
+                String[] pkValues = { managerName };
+                String[] pkNames = { "[Buisness].ManagerUserName"};
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+            else
+            {
+                String[] pkValues = { };
+                String[] pkNames = { };
+                return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            }
+            
+        }
+
+        public DataTable getUserPersonalName(String userName)
+        {
+            String[] colums = { "[Users].Name" };
+            String[] pkNames = { "[Users].UserName" };
+            String[] pkValues = { userName };
+            String[] tableNames = { "Users" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectCoupons()
+        {
+            String[] colums = { "[Coupon].Name as 'title'", "[Buisness].Latitude as 'lat'", "[Buisness].Longitude as 'lng'", "[Coupon].Name as 'description'" };
+            String[] pkNames = {"[Coupon].approve","[Buisness].approve" };
+            String[] pkValues = {"True","True" };
+            String[] tableNames = { "Buisness","Coupon" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
     }
     

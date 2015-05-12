@@ -44,9 +44,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="GMaps">
-      <HintPath>..\..\..\..\..\..\..\Desktop\gmaps_v4_1_0_5\GMaps.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -79,6 +76,9 @@
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
+    <Content Include="Methods\SearchBusiness\SearchBusinessByCity.aspx" />
+    <Content Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx" />
+    <Content Include="Methods\SearchBusiness\SearchBusinessDefault.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByCategory.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByLocation.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByName.aspx" />
@@ -88,6 +88,7 @@
     <Content Include="Manager\ManagerMaster.Master" />
     <Content Include="packages.config" />
     <Content Include="App_Data\GeoIP\GeoLiteCity.dat" />
+    <Content Include="Methods\SearchBusiness\SearchBusiness.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +134,34 @@
     </Compile>
     <Compile Include="Customer\CouponNotifications.aspx.designer.cs">
       <DependentUpon>CouponNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusiness.Master.cs">
+      <DependentUpon>SearchBusiness.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusiness.Master.designer.cs">
+      <DependentUpon>SearchBusiness.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByCity.aspx.cs">
+      <DependentUpon>SearchBusinessByCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByCity.aspx.designer.cs">
+      <DependentUpon>SearchBusinessByCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx.cs">
+      <DependentUpon>SearchBusinessByLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx.designer.cs">
+      <DependentUpon>SearchBusinessByLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessDefault.aspx.cs">
+      <DependentUpon>SearchBusinessDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessDefault.aspx.designer.cs">
+      <DependentUpon>SearchBusinessDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SearchCoupon\CouponSearch.Master.cs">
       <DependentUpon>CouponSearch.Master</DependentUpon>

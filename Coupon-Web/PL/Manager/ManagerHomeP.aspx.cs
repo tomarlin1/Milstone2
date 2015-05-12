@@ -13,15 +13,5 @@ namespace PL.Manager
         {
 
         }
-
-        protected void couponReport_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

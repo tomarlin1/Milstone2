@@ -253,7 +253,21 @@ namespace Coupon_Web.DAL
                     //replace the given values into placeholders.
                     for (int i = 0; i < pkSize; i++)
                     {
-                        cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
+                        switch (pKeyValues[i])
+                        {
+                            case "True":
+                                bool tr = true;
+                                cmdSql.Parameters.AddWithValue("@" + i, tr);
+                                break;
+                            case "False":
+                                bool fl = false;
+                                cmdSql.Parameters.AddWithValue("@" + i, fl);
+                                break;
+                            default:
+                                cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
+                                break;
+                        }
+                      
                     }
                 }
                 else

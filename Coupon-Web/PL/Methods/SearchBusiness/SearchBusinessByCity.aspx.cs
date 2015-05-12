@@ -1,28 +1,24 @@
-﻿using System;
+﻿using Coupon_Web.BL;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Coupon_Web.BL;
-using System.Data;
 
-namespace PL.Customer
+namespace PL.Methods.SearchBusiness
 {
-    public partial class SearchCouponByName : System.Web.UI.Page
+    public partial class SearchBusinessByCity : System.Web.UI.Page
     {
         DataTable _dt;
-        BlRequests _requests;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BlRequests _requests = new BlRequests();
             if (SiteMapDataSource1 != null)
             {
                 switch ((string)Session["User"])
                 {
-                    case "Customer":
-                        SiteMapDataSource1.StartingNodeUrl = "~/Customer/CustomerHomeP.aspx";
-                        break;
                     case "Manager":
                         SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx";
                         break;
@@ -31,20 +27,29 @@ namespace PL.Customer
                         break;
                 }
             }
-            _dt = new DataTable();
-            _requests = new BlRequests();
-            _dt = _requests.selectCouponsDetails();
-            View.DataSource = _dt;
-            View.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string text = TextBox_Name.Text;
-            _dt = _requests.selectCouponsName(text);
-            View.DataSource = _dt;
-            View.DataBind();
+            initDt();
         }
 
+        private void initDt()
+        {
+            BlRequests requests = new BlRequests();
+            string user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+            {
+                _dt = requests.selectBusinessByCity(TextBox1.Text, (String)Session["UserName"]);
+
+            }
+            else
+            {
+                _dt = requests.selectBusinessByCity(TextBox1.Text, "");
+            }
+
+            GridView1.DataSource = _dt;
+            GridView1.DataBind();
+        }
     }
 }

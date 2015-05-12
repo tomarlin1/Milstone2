@@ -4,13 +4,9 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style3 {
-            width: 333px;
-        }
         .auto-style4 {
             width: 333px;
-            height: 26px;
-        }
+            }
         .auto-style5 {
             height: 26px;
         }
@@ -42,10 +38,6 @@
         .auto-style14 {
             width: 136px;
         }
-        .auto-style15 {
-            width: 333px;
-            height: 25px;
-        }
         .auto-style16 {
             height: 25px;
             width: 124px;
@@ -64,10 +56,6 @@
         }
         .auto-style20 {
             height: 25px;
-        }
-        .auto-style21 {
-            width: 333px;
-            height: 30px;
         }
         .auto-style22 {
             width: 124px;
@@ -92,10 +80,6 @@
             width: 74px;
             height: 30px;
         }
-        .auto-style28 {
-            width: 333px;
-            height: 33px;
-        }
         .auto-style29 {
             width: 124px;
             height: 33px;
@@ -115,24 +99,74 @@
         .auto-style33 {
             height: 33px;
         }
+        .auto-style34 {
+            width: 124px;
+            height: 20px;
+        }
+        .auto-style35 {
+            width: 174px;
+            height: 20px;
+        }
+        .auto-style36 {
+            width: 134px;
+            height: 20px;
+        }
+        .auto-style37 {
+            width: 136px;
+            height: 20px;
+        }
+        .auto-style38 {
+            height: 20px;
+        }
+        .auto-style39 {
+            height: 125px;
+            width: 124px;
+        }
+        .auto-style40 {
+            height: 125px;
+            width: 174px;
+        }
+        .auto-style41 {
+            height: 125px;
+            width: 134px;
+        }
+        .auto-style42 {
+            height: 125px;
+            width: 136px;
+        }
+        .auto-style43 {
+            height: 125px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
         
-       z<table class="auto-style1">
+       <table class="auto-style1">
         <tr>
-            <td class="auto-style4"></td>
-            <td class="auto-style6"></td>
-            <td class="auto-style9"></td>
-            <td class="auto-style11" colspan="2"></td>
-            <td class="auto-style13"></td>
-            <td class="auto-style5"></td>
-            <td class="auto-style5"></td>
-            <td class="auto-style5"></td>
+            <td class="auto-style4" rowspan="18">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                    <CurrentNodeStyle ForeColor="#333333" />
+                    <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                    <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                    <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+                </asp:SiteMapPath>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" StartingNodeUrl="~/Customer/CustomerHomeP.aspx" />
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Arrows">
+                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                    <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+                </asp:TreeView>
+            </td>
+            <td class="auto-style39"></td>
+            <td class="auto-style40"></td>
+            <td class="auto-style41" colspan="2"></td>
+            <td class="auto-style42"></td>
+            <td class="auto-style43"></td>
+            <td class="auto-style43"></td>
+            <td class="auto-style43"></td>
         </tr>
         <tr>
-            <td class="auto-style3">
-                &nbsp;</td>
             <td class="auto-style7">
                 <asp:Label ID="Label1" runat="server" Text="Buy Coupon:" Width="140px" style="direction: ltr"></asp:Label>
             </td>
@@ -144,7 +178,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style4"></td>
             <td class="auto-style6">&nbsp;</td>
             <td class="auto-style9"></td>
             <td class="auto-style11" colspan="2"></td>
@@ -154,8 +187,6 @@
             <td class="auto-style5"></td>
         </tr>
         <tr>
-            <td class="auto-style3">
-                &nbsp;</td>
             <td class="auto-style7">
                 <asp:Label ID="Label3" runat="server" Text="Coupon id:" Width="140px"></asp:Label>
             </td>
@@ -169,7 +200,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">&nbsp;</td>
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
@@ -179,7 +209,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">
                 <asp:Label ID="Label4" runat="server" Text="Coupon Price:" Width="140px"></asp:Label>
             </td>
@@ -193,7 +222,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">&nbsp;</td>
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
@@ -203,7 +231,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">
                 <asp:Label ID="Label5" runat="server" Text="Bussiness Name:" Width="140px"></asp:Label>
             </td>
@@ -217,8 +244,16 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style4"></td>
-            <td class="auto-style6"></td>
+            <td class="auto-style6">&nbsp;</td>
+            <td class="auto-style9">&nbsp;</td>
+            <td class="auto-style11" colspan="2">&nbsp;</td>
+            <td class="auto-style13">&nbsp;</td>
+            <td class="auto-style5">&nbsp;</td>
+            <td class="auto-style5">&nbsp;</td>
+            <td class="auto-style5">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style6">&nbsp;</td>
             <td class="auto-style9"></td>
             <td class="auto-style11" colspan="2"></td>
             <td class="auto-style13"></td>
@@ -227,7 +262,6 @@
             <td class="auto-style5"></td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">
                 <asp:Label ID="Label6" runat="server" Text="Expired Date:" Width="140px"></asp:Label>
             </td>
@@ -241,7 +275,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">&nbsp;</td>
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
@@ -251,7 +284,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style15"></td>
             <td class="auto-style16">
                 <asp:Label ID="Label7" runat="server" Text="Pay By:" Width="140px"></asp:Label>
             </td>
@@ -269,7 +301,6 @@
             <td class="auto-style20"></td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style7">&nbsp;</td>
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
@@ -279,7 +310,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style21"></td>
             <td class="auto-style22">
                 <asp:DropDownList ID="payment_dropDownList" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="140px">
                     <asp:ListItem>Visa</asp:ListItem>
@@ -332,7 +362,6 @@
             <td class="auto-style26"></td>
         </tr>
         <tr>
-            <td class="auto-style4"></td>
             <td class="auto-style6"></td>
             <td class="auto-style9">
                 <asp:RequiredFieldValidator ID="CardNumberVali" runat="server" ControlToValidate="getCardNumber_tb" ErrorMessage="Required Card Number!" ForeColor="Red" Width="191px"></asp:RequiredFieldValidator>
@@ -346,7 +375,6 @@
             <td class="auto-style5"></td>
         </tr>
         <tr>
-            <td class="auto-style28"></td>
             <td class="auto-style29">
                 <asp:Button ID="purchaseCoupon_btn" runat="server" Text="Purchase Coupon" Width="140px" />
             </td>
@@ -358,14 +386,13 @@
             <td class="auto-style33"></td>
         </tr>
         <tr>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style7">&nbsp;</td>
-            <td class="auto-style10">&nbsp;</td>
-            <td class="auto-style12" colspan="2">&nbsp;</td>
-            <td class="auto-style14">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style34"></td>
+            <td class="auto-style35"></td>
+            <td class="auto-style36" colspan="2"></td>
+            <td class="auto-style37"></td>
+            <td class="auto-style38"></td>
+            <td class="auto-style38"></td>
+            <td class="auto-style38"></td>
         </tr>
     </table>
 &nbsp;<asp:Panel ID="Panel1" runat="server" BackColor="White">
