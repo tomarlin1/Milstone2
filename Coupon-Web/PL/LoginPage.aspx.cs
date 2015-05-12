@@ -75,5 +75,10 @@ namespace PL
             }
             Response.Redirect(nextPage); 
         }
+
+        protected void ButtonRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/RegisterUser.aspx");
+        }
     }
 }

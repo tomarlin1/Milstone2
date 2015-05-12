@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Coupon_Web.BL;
 
 namespace PL
 {
@@ -16,7 +17,18 @@ namespace PL
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //check if the UserName is legit.
+            BlRequests request = new BlRequests();
+            String userName = TbUserName.Text;
+            bool isExist = request.IsUserExist(userName);
+            if (isExist)
+            {
+                errorlbl.Text = "UserName Exist";
+            }
+            else
+            {
+                request.InsertCustomer(userName, TbEmail.Text, TbPhoneNumber.Text, TbName.Text, TbPassword.Text);
+                Response.Redirect("~/LoginPage.aspx");
+            }
         }
 
         protected void Reset_Click(object sender, EventArgs e)

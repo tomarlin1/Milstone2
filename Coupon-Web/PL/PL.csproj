@@ -81,6 +81,7 @@
     <Content Include="Methods\AddOperation\AddCoupon.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByCity.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx" />
+    <Content Include="Methods\SearchBusiness\SearchBusinessByName.aspx" />
     <Content Include="Methods\SearchBusiness\SearchBusinessDefault.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByCategory.aspx" />
     <Content Include="Methods\SearchCoupon\SearchCouponByLocation.aspx" />
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="Methods\SearchBusiness\SearchBusinessByLocation.aspx.designer.cs">
       <DependentUpon>SearchBusinessByLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByName.aspx.cs">
+      <DependentUpon>SearchBusinessByName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Methods\SearchBusiness\SearchBusinessByName.aspx.designer.cs">
+      <DependentUpon>SearchBusinessByName.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\SearchBusiness\SearchBusinessDefault.aspx.cs">
       <DependentUpon>SearchBusinessDefault.aspx</DependentUpon>
