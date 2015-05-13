@@ -502,6 +502,30 @@ namespace Coupon_Web.BL
             intersect[0] = new Tuple<string, string>("[Deal].CouponId", "[Coupon].Id");
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
+
+        public String selectManagerOfCoupon(int couponId)
+        {
+            String[] colums = { "[Manager].UserName" };
+            String[] pkNames = { "[Coupon].Id" };
+            String[] pkValues = { couponId.ToString() };
+            String[] tableNames = { "Coupon","Buisness","Manager" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[2];
+            intersect[0] = new Tuple<string, string>("[Coupon].BuisnessId", "[Buisness].Id");
+            intersect[1] = new Tuple<string, string>("[Buisness].ManagerUserName", "[Manager].UserName");
+            DataTable dt =_query.select(tableNames, pkNames, pkValues, colums, intersect);
+            return (String)dt.Rows[0][0];
+        }
+
+        public String selectManagerOfBusiness(int businessId)
+        {
+            String[] colums = { "[Buisness].ManagerUserName" };
+            String[] pkNames = { "[Buisness].Id" };
+            String[] pkValues = { businessId.ToString() };
+            String[] tableNames = {  "Buisness" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            DataTable dt = _query.select(tableNames, pkNames, pkValues, colums, intersect);
+            return (String)dt.Rows[0][0];
+        }
     }
     
 }

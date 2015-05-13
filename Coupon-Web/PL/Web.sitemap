@@ -16,7 +16,7 @@
       </siteMapNode>
       <siteMapNode title="Home" description="Manager Home Page" url="~/Manager/ManagerHomeP.aspx" >
         <siteMapNode title="Coupon" description="Coupon operations base node" >
-          <siteMapNode title="Edit" description="Edit Coupon" url="" />
+          <siteMapNode title="Edit" description="Edit Coupon" url="~/Methods/EditOperations/EditCoupon.aspx?view=manager" />
           <siteMapNode title="Add" description="Add Coupon" url="~/Methods/AddOperation/AddCoupon.aspx?view=manager" />
           <siteMapNode title="Search" description="Search Coupon" url="~/Methods/SearchCoupon/SearchCouponDefault.aspx?view=manager" >
             <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx?view=manager" />
@@ -25,7 +25,7 @@
           </siteMapNode>
         </siteMapNode>
         <siteMapNode title="Business" description="Business operations base node" >
-          <siteMapNode title="Edit" description="Edit Business" url="" />
+          <siteMapNode title="Edit" description="Edit Business" url="~/Methods/EditOperations/EditBusiness.aspx?view=manager" />
           <siteMapNode title="Add" description="Add Business" url="~/Methods/AddOperation/AddBusiness.aspx?view=manager" />
           <siteMapNode title="Search" description="Business Coupon" url="~/Methods/SearchBusiness/SearchBusinessDefault.aspx" >
             <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchBusiness/SearchBusinessByName.aspx" />
@@ -38,12 +38,12 @@
       <siteMapNode title="Home" description="System Manager Home Page" url="~/SystemManager/SystemManagerHomeP.aspx" >
         <siteMapNode title="Coupon" description="Coupon operations base node" >
           <siteMapNode title="Delete" description="Delete Coupon"  />
-          <siteMapNode title="Edit" description="Edit Coupon"  />
-          <siteMapNode title="Approve" description="Approve Coupons" url="~/Methods/ApproveOperations/ApproveCoupon.aspx?view=systemmanage" />
-          <siteMapNode title="Search" description="Search Coupon" url="~/Methods/SearchCoupon/SearchCouponDefault.aspx?view=systemmanage" >
-            <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx?view=systemmanage" />
-            <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx?view=systemmanage" />
-            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx?view=systemmanage" />
+          <siteMapNode title="Edit" description="Edit Coupon" url="~/Methods/EditOperations/EditCoupon.aspx?view=systemmanger" />
+          <siteMapNode title="Approve" description="Approve Coupons" url="~/Methods/ApproveOperations/ApproveCoupon.aspx?view=systemmanager" />
+          <siteMapNode title="Search" description="Search Coupon" url="~/Methods/SearchCoupon/SearchCouponDefault.aspx?view=systemmanager" >
+            <siteMapNode title="By Name" description="Search by Name" url="~/Methods/SearchCoupon/SearchCouponByName.aspx?view=systemmanager" />
+            <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx?view=systemmanager" />
+            <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx?view=systemmanager" />
           </siteMapNode>
         </siteMapNode>
          <siteMapNode title="Business" description="Business operations base node" >

@@ -56,7 +56,5 @@ namespace PL.Methods.AddOperation
             Response.Redirect(nextPage); 
         }
 
-
-
     }
 }
