@@ -12,8 +12,7 @@
         }
         .auto-style6 {
             height: 26px;
-            width: 124px;
-        }
+            }
         .auto-style7 {
             width: 124px;
         }
@@ -143,7 +142,7 @@
         
        <table class="auto-style1">
         <tr>
-            <td class="auto-style4" rowspan="18">
+            <td class="auto-style4" rowspan="17">
                 <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
                     <CurrentNodeStyle ForeColor="#333333" />
                     <NodeStyle Font-Bold="True" ForeColor="#990000" />
@@ -178,9 +177,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style6">&nbsp;</td>
-            <td class="auto-style9"></td>
-            <td class="auto-style11" colspan="2"></td>
+            <td class="auto-style6" colspan="4">
+                <asp:Label ID="Label11" runat="server" Text="Choose the ID of the coupon you wish to buy:" Width="494px" style="font-weight: 700; text-decoration: underline"></asp:Label>
+            </td>
             <td class="auto-style13"></td>
             <td class="auto-style5"></td>
             <td class="auto-style5"></td>
@@ -191,17 +190,23 @@
                 <asp:Label ID="Label3" runat="server" Text="Coupon id:" Width="140px"></asp:Label>
             </td>
             <td class="auto-style10">
-                <asp:Label ID="getCouponId_lbl" runat="server" Width="140px"></asp:Label>
+                <asp:TextBox ID="txtBoxID" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style12" colspan="2">&nbsp;</td>
+            <td class="auto-style12" colspan="2">
+                <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show" ValidateRequestMode="Enabled" />
+            </td>
             <td class="auto-style14">&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style7">&nbsp;</td>
-            <td class="auto-style10">&nbsp;</td>
+            <td class="auto-style7">
+                <asp:Label ID="Label12" runat="server" Text="Coupon name:" Width="140px"></asp:Label>
+            </td>
+            <td class="auto-style10">
+                <asp:Label ID="lblName" runat="server" Width="140px"></asp:Label>
+            </td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
             <td class="auto-style14">&nbsp;</td>
             <td>&nbsp;</td>
@@ -213,39 +218,42 @@
                 <asp:Label ID="Label4" runat="server" Text="Coupon Price:" Width="140px"></asp:Label>
             </td>
             <td class="auto-style10">
-                <asp:Label ID="getCouponPrice_lbl" runat="server" Width="140px"></asp:Label>
+                <asp:Label ID="lblCouponPrice" runat="server" Width="140px"></asp:Label>
             </td>
-            <td class="auto-style12" colspan="2">&nbsp;</td>
-            <td class="auto-style14">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style7">&nbsp;</td>
-            <td class="auto-style10">&nbsp;</td>
-            <td class="auto-style12" colspan="2">&nbsp;</td>
-            <td class="auto-style14">&nbsp;</td>
+            <td class="auto-style12" colspan="2">
+                <asp:Label ID="Label10" runat="server" Text="Discount:" Width="140px"></asp:Label>
+            </td>
+            <td class="auto-style14">
+                <asp:Label ID="lbldiscount" runat="server" Width="140px"></asp:Label>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style7">
-                <asp:Label ID="Label5" runat="server" Text="Bussiness Name:" Width="140px"></asp:Label>
+                <asp:Label ID="Label6" runat="server" Text="Expired Date:" Width="140px" Height="20px"></asp:Label>
             </td>
             <td class="auto-style10">
-                <asp:Label ID="getBussinessName_lbl" runat="server" Width="140px"></asp:Label>
+                <asp:Label ID="lblExpiredDate" runat="server" Width="140px" Height="16px"></asp:Label>
             </td>
-            <td class="auto-style12" colspan="2">&nbsp;</td>
-            <td class="auto-style14">&nbsp;</td>
+            <td class="auto-style12" colspan="2">
+                <asp:Label ID="lbl11" runat="server" Width="140px">Rating</asp:Label>
+            </td>
+            <td class="auto-style14">
+                <asp:Label ID="lblRating" runat="server" Width="140px"></asp:Label>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style6">&nbsp;</td>
-            <td class="auto-style9">&nbsp;</td>
+            <td class="auto-style6">
+                <asp:Label ID="Label5" runat="server" Text="Bussiness ID:" Width="140px"></asp:Label>
+            </td>
+            <td class="auto-style9">
+                <asp:Label ID="lblBusinessID" runat="server" Width="140px"></asp:Label>
+            </td>
             <td class="auto-style11" colspan="2">&nbsp;</td>
             <td class="auto-style13">&nbsp;</td>
             <td class="auto-style5">&nbsp;</td>
@@ -263,11 +271,10 @@
         </tr>
         <tr>
             <td class="auto-style7">
-                <asp:Label ID="Label6" runat="server" Text="Expired Date:" Width="140px"></asp:Label>
+                <asp:Label ID="l13" runat="server" Width="140px" Font-Size="Larger" style="font-weight: 700; text-decoration: underline">Order:</asp:Label>
             </td>
             <td class="auto-style10">
-                <asp:Label ID="getExpiredDate_lbl" runat="server" Width="140px"></asp:Label>
-            </td>
+                &nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
             <td class="auto-style14">&nbsp;</td>
             <td>&nbsp;</td>
@@ -311,7 +318,7 @@
         </tr>
         <tr>
             <td class="auto-style22">
-                <asp:DropDownList ID="payment_dropDownList" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="140px">
+                <asp:DropDownList ID="payment_dropDownList" runat="server" Width="140px">
                     <asp:ListItem>Visa</asp:ListItem>
                     <asp:ListItem>Master Card</asp:ListItem>
                     <asp:ListItem>Western Union</asp:ListItem>

@@ -11,13 +11,8 @@ namespace PL.Methods.AddOperation
 {
     public partial class AddCoupon : System.Web.UI.Page
     {
-        const int CUSTOMER = 0;
-        const int MANAGER = 1;
-        const int SYSMANAGER = 2;
-
         BlRequests request;
 
-        private int authority;
         protected void Page_Load(object sender, EventArgs e)
         {
             request = new BlRequests();
@@ -26,15 +21,12 @@ namespace PL.Methods.AddOperation
                 switch ((string)Session["User"])
                 {
                     case "Manager":
-                        {
-                            SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx";
-                            authority = MANAGER;        
-                        }
+                            SiteMapDataSource1.StartingNodeUrl = "~/Manager/ManagerHomeP.aspx"; 
                         break;
                     case "System Manager":
                         {
                             SiteMapDataSource1.StartingNodeUrl = "~/SystemManager/SystemManagerHomeP.aspx";
-                            authority = SYSMANAGER;
+                            
                         }
                         break;
                 }
@@ -51,7 +43,7 @@ namespace PL.Methods.AddOperation
             DateTime couponExpiredDate = DateTime.Parse(getDate);
             int bussinessId = int.Parse(txtBoxBusinessID.Text);
 
-          
+
             request.InsertCoupon(couponName, couponPrice, couponPrice, couponExpiredDate, 1, bussinessId);
             Response.Redirect(nextPage); 
         }

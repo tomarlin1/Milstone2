@@ -56,7 +56,7 @@ namespace Coupon_Web.BL
         public void InsertCoupon(String name, double originalMoney, double discountPrice, DateTime expiredDate,int rating, int businessId)
         {
             String id = (_query.SelectMaxID("Coupon") + 1).ToString();
-            String[] values = new String[] { id, name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.ToString(), rating.ToString(), businessId.ToString(), "False", DateTime.Today.Date.ToString() };
+            String[] values = new String[] { id, name, originalMoney.ToString(), discountPrice.ToString(), expiredDate.Date.ToString(), rating.ToString(), businessId.ToString(), "False", DateTime.Today.Date.ToString() };
             _query.Insert("Coupon", values);
         }
         public void InsertCouponCategory(int couponId, int categoryId)
@@ -502,6 +502,9 @@ namespace Coupon_Web.BL
             intersect[0] = new Tuple<string, string>("[Deal].CouponId", "[Coupon].Id");
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
+
+
+        
     }
     
 }

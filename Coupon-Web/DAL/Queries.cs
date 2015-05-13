@@ -26,7 +26,6 @@ namespace Coupon_Web.DAL
                 _conn.open();
                 String maxStr = cmdSql.ExecuteScalar().ToString();
                 ret = int.Parse(maxStr);
-
             }
             catch (Exception e)
             {
@@ -307,7 +306,6 @@ namespace Coupon_Web.DAL
                                 cmdSql.Parameters.AddWithValue("@" + i, pKeyValues[i]);
                                 break;
                         }
-                      
                     }
                 }
                 else
