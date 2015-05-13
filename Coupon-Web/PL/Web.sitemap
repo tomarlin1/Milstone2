@@ -9,6 +9,7 @@
               <siteMapNode title="By Category" description="Search by Category" url="~/Methods/SearchCoupon/SearchCouponByCategory.aspx" />
               <siteMapNode title="By Location" description="Search by Location" url="~/Methods/SearchCoupon/SearchCouponByLocation.aspx" />
             </siteMapNode>
+            <siteMapNode title="Rate" description="Rates a coupon" url="~/Customer/RateCoupon.aspx" />
             <siteMapNode title="History" description="History Coupon" url="~/Customer/History.aspx"  />
             <siteMapNode title="ViewFriends" description="View friend's Coupon"  />
           </siteMapNode>

@@ -76,6 +76,7 @@
     <Content Include="Customer\CustomerMaster.Master" />
     <Content Include="Customer\FriendsReport.aspx" />
     <Content Include="Customer\History.aspx" />
+    <Content Include="Customer\RateCoupon.aspx" />
     <Content Include="Customer\SearchBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddBusiness.aspx" />
     <Content Include="Methods\AddOperation\AddCoupon.aspx" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="Customer\History.aspx.designer.cs">
       <DependentUpon>History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\RateCoupon.aspx.cs">
+      <DependentUpon>RateCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\RateCoupon.aspx.designer.cs">
+      <DependentUpon>RateCoupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Methods\AddOperation\AddBusiness.aspx.cs">
       <DependentUpon>AddBusiness.aspx</DependentUpon>
