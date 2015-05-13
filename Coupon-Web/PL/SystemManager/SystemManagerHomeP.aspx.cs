@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Coupon_Web.BL;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +13,12 @@ namespace PL.SystemManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lb_userName.Text = (string)Session["Name"];
+            BlRequests bl = new BlRequests();
+            DataTable dt = bl.selectBusinessApprove();
+            if (dt.Rows.Count > 0) Label1.Text = "You Have Businesses To Approve";
+            dt = bl.selectCouponApprove();
+            if (dt.Rows.Count > 0) Label2.Text = "You Have Coupons To Approve";
         }
     }
 }
