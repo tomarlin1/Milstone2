@@ -39,12 +39,11 @@ namespace PL.Methods.AddOperation
 
             string couponName = txtBoxCouponName.Text;
             double couponPrice = double.Parse(txtBoxCouponPrice.Text);
-            String getDate = (ddl_year.Text + "/" + ddl_month.Text + "/" + ddl_day.Text);
-            DateTime couponExpiredDate = DateTime.Parse(getDate);
+            String getDate = (ddl_month.Text + "-" + ddl_day.Text + "-" + ddl_year.Text);
             int bussinessId = int.Parse(txtBoxBusinessID.Text);
 
 
-            request.InsertCoupon(couponName, couponPrice, couponPrice, couponExpiredDate, 1, bussinessId);
+            request.InsertCoupon(couponName, couponPrice, couponPrice, getDate, 1, bussinessId);
             Response.Redirect(nextPage); 
         }
 
