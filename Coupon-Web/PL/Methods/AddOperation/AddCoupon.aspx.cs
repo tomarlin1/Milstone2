@@ -43,7 +43,7 @@ namespace PL.Methods.AddOperation
             int bussinessId = int.Parse(txtBoxBusinessID.Text);
 
 
-            request.InsertCoupon(couponName, couponPrice, couponPrice, getDate, 1, bussinessId);
+            request.InsertCoupon(couponName, couponPrice, couponPrice, getDate, 1, bussinessId,DropDownList1.SelectedIndex+1);
             Response.Redirect(nextPage); 
         }
 

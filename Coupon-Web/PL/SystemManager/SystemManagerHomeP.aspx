@@ -23,10 +23,10 @@
         }
         .auto-style13 {
             height: 26px;
-            width: 476px;
+            width: 179px;
         }
         .auto-style14 {
-            width: 476px;
+            width: 179px;
             font-size: xx-large;
             text-align: center;
         }
@@ -93,8 +93,7 @@
                         <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                     <td class="auto-style13">
-                        <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style27"></td>
                     <td class="auto-style5"></td>
                     <td class="auto-style3"></td>
@@ -111,7 +110,9 @@
                         </asp:TreeView>
                         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" StartingNodeUrl="~/SystemManager/SystemManagerHomeP.aspx" />
                     </td>
-                    <td class="auto-style28"></td>
+                    <td class="auto-style28">
+                        <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                     <td class="auto-style13"></td>
                     <td class="auto-style27"></td>
                     <td class="auto-style5">&nbsp;</td>

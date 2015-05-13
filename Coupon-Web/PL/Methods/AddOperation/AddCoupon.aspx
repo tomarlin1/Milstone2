@@ -200,9 +200,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style13"></td>
+                <td class="auto-style13">
+                    <asp:Label ID="Label14" runat="server" Text="choose category:" Width="250px" style="text-align: right"></asp:Label>
+                </td>
                 <td class="auto-style14">
-                    <asp:Button ID="btnAdd" runat="server" OnClick="addCoupon_btn_Click" style="text-align: left" Text="Add Coupon" Width="134px" ToolTip="press to add new coupon" />
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name] FROM [Category]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style14"></td>
                 <td class="auto-style15"></td>
@@ -211,7 +215,8 @@
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style4">
-                    &nbsp;</td>
+                    <asp:Button ID="btnAdd" runat="server" OnClick="addCoupon_btn_Click" style="text-align: left" Text="Add Coupon" Width="134px" ToolTip="press to add new coupon" />
+                </td>
                 <td class="auto-style4">
                     &nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>

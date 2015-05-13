@@ -68,12 +68,13 @@
                         </td>
                         <td>&nbsp;</td>
                         <td class="auto-style4">
-                            <asp:DropDownList ID="category" runat="server">
+                            <asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
                                 <asp:ListItem>Entertainment</asp:ListItem>
                                 <asp:ListItem>Restaurants</asp:ListItem>
                                 <asp:ListItem>Leisure</asp:ListItem>
                                 <asp:ListItem>Consumerism</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name] FROM [Category]"></asp:SqlDataSource>
                         </td>
                         <td>
                             <asp:Button ID="Button1" runat="server" Text="Search" Width="65px" OnClick="Button1_Click" />
