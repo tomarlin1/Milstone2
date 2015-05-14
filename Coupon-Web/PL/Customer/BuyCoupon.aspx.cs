@@ -18,7 +18,7 @@ namespace PL.Customer
             request = new BlRequests();
             if (ddlID.Items.Count == 1)
             {
-                foreach (DataRow row in request.selectCouponsDetails().Rows)
+                foreach (DataRow row in request.selectCouponsDetails("").Rows)
                     ddlID.Items.Add(row[0].ToString());
             }
             
@@ -48,7 +48,7 @@ namespace PL.Customer
                 return;
             }
             int couponId = int.Parse(ddlID.Items[ddlID.SelectedIndex].ToString());
-            String customerUsername = "amitay";//Page.Session["UserName"].ToString();
+            String customerUsername = (String)Page.Session["UserName"];
             String paymentMethod = payment_dropDownList.Items[payment_dropDownList.SelectedIndex].ToString();
             //need to generate serial key
             try

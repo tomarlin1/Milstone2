@@ -27,7 +27,7 @@ namespace Coupon_Web.DAL
                 String maxStr = cmdSql.ExecuteScalar().ToString();
                 ret = int.Parse(maxStr);
             }
-            catch (Exception e)
+            catch (Exception )
             {}
             finally
             {
