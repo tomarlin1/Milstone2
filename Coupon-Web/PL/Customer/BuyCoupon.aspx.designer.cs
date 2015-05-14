@@ -67,22 +67,22 @@ namespace PL.Customer {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// txtBoxID control.
+        /// ddlID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxID;
+        protected global::System.Web.UI.WebControls.DropDownList ddlID;
         
         /// <summary>
-        /// btnShow control.
+        /// lblerrorChoose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShow;
+        protected global::System.Web.UI.WebControls.Label lblerrorChoose;
         
         /// <summary>
         /// Label12 control.
@@ -299,6 +299,24 @@ namespace PL.Customer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button purchaseCoupon_btn;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// lblSerialKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSerialKey;
         
         /// <summary>
         /// Panel1 control.

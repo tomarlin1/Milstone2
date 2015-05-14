@@ -15,7 +15,7 @@ namespace PL.SystemManager
         {
             lb_userName.Text = (string)Session["Name"];
             BlRequests bl = new BlRequests();
-            DataTable dt = bl.selectBusinessApprove();
+            DataTable dt = bl.selectBusinessApprove(false);
             if (dt.Rows.Count > 0) Label1.Text = "You Have Businesses To Approve";
             dt = bl.selectCouponApprove();
             if (dt.Rows.Count > 0) Label2.Text = "You Have Coupons To Approve";

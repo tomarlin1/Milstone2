@@ -9,7 +9,7 @@ namespace Tests
     public class Tests
     {
         private BlRequests bl;
-
+        /*
         [TestInitialize]
         public void SetUp()
         {
@@ -17,23 +17,21 @@ namespace Tests
             bl = new BlRequests();
             try
             {
-                bl.InsertUser("Amitay", "amitay", "12345678"); // customer
-                bl.InsertUser("shimi", "amitay", "12345678"); // manager
-                bl.InsertCategory(1, "Entertainment", "stand-ups, tv-Shows, etc...");
+                bl.InsertCategory("Entertainment", "stand-ups, tv-Shows, etc...");
                 bl.InsertSecurePayment("Paypal", 5);
-                bl.InsertManager("shimi");
-                bl.InsertBusiness(1, "Hamashbir", "menashe kapara 33 Rehovot", "in the shop you can find a lot of things", "shimi");
-                bl.InsertCoupon(1, "dead-sea-soap", 100, 70, new DateTime(2014, 04, 06).Date, 1, 1);
+                bl.InsertManager("balul12", "balul", "12345678");
+                bl.InsertBusiness("Hamashbir", "menashe kapara 33 Rehovot", "in the shop you can find a lot of things", "shimi", "33.3333", "33.34343", "rehovot");
+                bl.InsertCoupon("dead-sea-soap", 100, 70, "11-23-2016", 1, 1);
                 bl.InsertCouponCategory(1, 1);
-                bl.InsertCustomer("Amitay", "amitay@gmail.com", "0542819491");
+                bl.InsertCustomer("moseiko12", "amitay@gmail.com", "0542819491", "moseiko", "123");
                 bl.InsertCustomerPreference("Amitay", 1);
-                bl.InsertDeal(1, 0, "11111", 1, "Amitay", "Paypal");
+                bl.InsertDeal(0, "11111", 1, "Amitay", "Paypal");
                 bl.InsertRates("Amitay", 1, 3, "good");
 
                 bl.InsertUser("haliliAsaf", "asaf", "mordchai");
                 bl.InsertUser("Fahima", "fahima", "vdvldms!ds");
                 bl.InsertSecurePayment("Cash", 3);
-                bl.InsertCategory(4, "Pnay", "some staff");
+                bl.InsertCategory("Pnay", "some staff");
             }
             catch (Exception)
             { }
@@ -162,5 +160,6 @@ namespace Tests
             catch (Exception)
             { }
         }
+         * */
     }
 }

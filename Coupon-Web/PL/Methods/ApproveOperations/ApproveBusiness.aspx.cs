@@ -14,7 +14,7 @@ namespace PL.Methods.ApproveOperations
         protected void Page_Load(object sender, EventArgs e)
         {
             BlRequests bl = new BlRequests();
-            DataTable dt = bl.selectBusinessApprove();
+            DataTable dt = bl.selectBusinessApprove(false);
             GridView1.DataSource = dt;
             GridView1.DataBind();
 
@@ -29,7 +29,7 @@ namespace PL.Methods.ApproveOperations
                 id = int.Parse(TextBox1.Text);
                 errorlbl.Text = "";
                 bl.EditBusiness(id, "approve", "True");
-                DataTable dt = bl.selectBusinessApprove();
+                DataTable dt = bl.selectBusinessApprove(false);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

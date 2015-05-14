@@ -14,14 +14,12 @@
             height: 26px;
             }
         .auto-style7 {
-            width: 124px;
         }
         .auto-style9 {
             height: 26px;
             width: 174px;
         }
         .auto-style10 {
-            width: 174px;
         }
         .auto-style11 {
             height: 26px;
@@ -84,7 +82,6 @@
             height: 33px;
         }
         .auto-style30 {
-            width: 174px;
             height: 33px;
         }
         .auto-style31 {
@@ -99,15 +96,6 @@
             height: 33px;
         }
         .auto-style34 {
-            width: 124px;
-            height: 20px;
-        }
-        .auto-style35 {
-            width: 174px;
-            height: 20px;
-        }
-        .auto-style36 {
-            width: 134px;
             height: 20px;
         }
         .auto-style37 {
@@ -117,24 +105,16 @@
         .auto-style38 {
             height: 20px;
         }
-        .auto-style39 {
-            height: 125px;
+        .auto-style44 {
             width: 124px;
+            height: 51px;
         }
-        .auto-style40 {
-            height: 125px;
-            width: 174px;
+        .auto-style45 {
+            height: 51px;
         }
-        .auto-style41 {
-            height: 125px;
-            width: 134px;
-        }
-        .auto-style42 {
-            height: 125px;
+        .auto-style46 {
             width: 136px;
-        }
-        .auto-style43 {
-            height: 125px;
+            height: 51px;
         }
     </style>
 </asp:Content>
@@ -157,19 +137,11 @@
                     <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
                 </asp:TreeView>
             </td>
-            <td class="auto-style39"></td>
-            <td class="auto-style40"></td>
-            <td class="auto-style41" colspan="2"></td>
-            <td class="auto-style42"></td>
-            <td class="auto-style43"></td>
-            <td class="auto-style43"></td>
-            <td class="auto-style43"></td>
         </tr>
         <tr>
-            <td class="auto-style7">
-                <asp:Label ID="Label1" runat="server" Text="Buy Coupon:" Width="140px" style="direction: ltr"></asp:Label>
+            <td class="auto-style7" colspan="2">
+                <asp:Label ID="Label1" runat="server" Text="Buy Coupon:" Width="272px" style="direction: ltr; text-decoration: underline; font-weight: 700;" Font-Size="Larger"></asp:Label>
             </td>
-            <td class="auto-style10">&nbsp;</td>
             <td class="auto-style12" colspan="2">&nbsp;</td>
             <td class="auto-style14">&nbsp;</td>
             <td>&nbsp;</td>
@@ -186,19 +158,20 @@
             <td class="auto-style5"></td>
         </tr>
         <tr>
-            <td class="auto-style7">
+            <td class="auto-style44">
                 <asp:Label ID="Label3" runat="server" Text="Coupon id:" Width="140px"></asp:Label>
             </td>
-            <td class="auto-style10">
-                <asp:TextBox ID="txtBoxID" runat="server"></asp:TextBox>
+            <td class="auto-style45" colspan="3">
+                &nbsp;&nbsp;
+                <asp:DropDownList ID="ddlID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlID_SelectedIndexChanged" ValidationGroup="aaa">
+                    <asp:ListItem>Choose ID</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Label runat="server" Text="Choose coupon!" Width="140px" ID="lblerrorChoose" ForeColor="#FF3300" style="font-weight: 700" Visible="False"></asp:Label>
             </td>
-            <td class="auto-style12" colspan="2">
-                <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show" ValidateRequestMode="Enabled" />
-            </td>
-            <td class="auto-style14">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style46">&nbsp;</td>
+            <td class="auto-style45"></td>
+            <td class="auto-style45"></td>
+            <td class="auto-style45"></td>
         </tr>
         <tr>
             <td class="auto-style7">
@@ -385,17 +358,17 @@
             <td class="auto-style29">
                 <asp:Button ID="purchaseCoupon_btn" runat="server" Text="Purchase Coupon" Width="140px" OnClick="purchaseCoupon_btn_Click" />
             </td>
-            <td class="auto-style30"></td>
-            <td class="auto-style31" colspan="2"></td>
-            <td class="auto-style32"></td>
+            <td class="auto-style30" colspan="4">
+                <asp:Label runat="server" Text="Illegal syntax in parameter check again!" Width="348px" ID="lblError" ForeColor="#FF3300" style="font-weight: 700" Visible="False"></asp:Label>
+            </td>
             <td class="auto-style33"></td>
             <td class="auto-style33"></td>
             <td class="auto-style33"></td>
         </tr>
         <tr>
-            <td class="auto-style34"></td>
-            <td class="auto-style35"></td>
-            <td class="auto-style36" colspan="2"></td>
+            <td class="auto-style34" colspan="4">
+                <asp:Label runat="server" Width="474px" ID="lblSerialKey" ForeColor="#FF3300" style="font-weight: 700"></asp:Label>
+            </td>
             <td class="auto-style37"></td>
             <td class="auto-style38"></td>
             <td class="auto-style38"></td>

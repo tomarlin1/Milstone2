@@ -14,7 +14,15 @@ namespace PL.Customer
         private BlRequests request;
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblerrorChoose.Visible = false;
             request = new BlRequests();
+            if (ddlID.Items.Count == 1)
+            {
+                foreach (DataRow row in request.selectCouponsDetails().Rows)
+                    ddlID.Items.Add(row[0].ToString());
+            }
+            
+            
             if (SiteMapDataSource1 != null)
             {
                 switch ((string)Session["User"])
@@ -31,39 +39,54 @@ namespace PL.Customer
 
         protected void purchaseCoupon_btn_Click(object sender, EventArgs e)
         {
+            lblerrorChoose.Visible = false;
+            lblError.Visible = false;
             
-        }
-
-        
-        protected void btnShow_Click(object sender, EventArgs e)
-        {
-            int id;
+            if(ddlID.SelectedIndex == 0)
+            {
+                lblerrorChoose.Visible = true;
+                return;
+            }
+            int couponId = int.Parse(ddlID.Items[ddlID.SelectedIndex].ToString());
+            String customerUsername = "amitay";//Page.Session["UserName"].ToString();
+            String paymentMethod = payment_dropDownList.Items[payment_dropDownList.SelectedIndex].ToString();
+            //need to generate serial key
             try
             {
-                id = int.Parse(txtBoxID.Text);
-                if (request.IsCouponExist(id))
+                Guid g = Guid.NewGuid();
+                string GuidString = Convert.ToBase64String(g.ToByteArray());
+                GuidString = GuidString.Replace("=", "");
+                GuidString = GuidString.Replace("+", "");
+                request.InsertDeal(0, GuidString, couponId, customerUsername, paymentMethod);
+
+                lblSerialKey.Text = "Your order succesfully handled!  \nYour uniq serial key is: " + GuidString;
+            }
+            catch(Exception)
+            {
+                lblError.Visible = true;
+            }
+        }
+
+        protected void ddlID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSerialKey.Text = "";
+            DataTable a = request.selectAllCoupons();
+
+            if (ddlID.SelectedIndex > 0)
+            {
+                DataRow b = a.Rows[ddlID.SelectedIndex - 1];
+
+                if (b != null)
                 {
-                    DataTable a = request.selectCouponsDetails();
-                    DataRow b = a.Rows[1];
-
-                    if (b != null)
-                    {
-                        Object[] bArr = b.ItemArray;
-                        lblName.Text = bArr[1].ToString();
-                        lblCouponPrice.Text = bArr[2].ToString();
-                        lbldiscount.Text = b[3].ToString();
-                        lblExpiredDate.Text = b[4].ToString();
-                        lblRating.Text = b[5].ToString();
-                        lblBusinessID.Text = b[6].ToString();
-                        
-                    }
-                    else
-                        lblRating.Text = "out";
-
+                    Object[] bArr = b.ItemArray;
+                    lblName.Text = bArr[1].ToString();
+                    lblCouponPrice.Text = bArr[2].ToString();
+                    lbldiscount.Text = b[3].ToString();
+                    lblExpiredDate.Text = b[4].ToString();
+                    lblRating.Text = b[5].ToString();
+                    lblBusinessID.Text = b[6].ToString();
                 }
             }
-            catch (Exception)
-            { }
         }
     }
 }
