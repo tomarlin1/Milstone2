@@ -35,7 +35,16 @@ namespace PL.Customer
         public string ConvertDataTabletoString()
         {
             BlRequests bl = new BlRequests();
-            DataTable dt = bl.selectCoupons();
+            DataTable dt ;
+            String user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+            {
+                dt = bl.selectCoupons((String)Session["UserName"]);
+            }
+            else
+            {
+                dt = bl.selectCoupons("");
+            }
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
             Dictionary<string, object> row;

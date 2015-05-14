@@ -33,9 +33,19 @@ namespace PL.Customer
             }
             _dt = new DataTable();
             _requests = new BlRequests();
-            _dt = _requests.selectCouponsDetails();
-            View.DataSource = _dt;
-            View.DataBind();
+            String user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+            {
+                _dt = _requests.selectCouponsDetails((String)Session["UserName"]);
+                View.DataSource = _dt;
+                View.DataBind();
+            }
+            else
+            {
+                _dt = _requests.selectCouponsDetails("");
+                View.DataSource = _dt;
+                View.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
