@@ -18,15 +18,9 @@ namespace Coupon_Web.BL
             _query = new Queries();
         }
 
-        /// <the next functions are related to various Insert's functions.>
+        /// <the next functions are related to various login's functions.>
         /// 
         /// </summary>
-        public void InsertBusiness(String name, String address, String description, String managerUserName, string latitude, string longitude, string city)
-        {
-            String id = (_query.SelectMaxID("Buisness") + 1).ToString();
-            String[] values = new String[] { id, name, address, description, managerUserName, "false", latitude, longitude, city};
-            _query.Insert("Buisness", values);
-        }
         public Boolean ExistUserForLogin(string userName, string password)
         {
             String[] pkNames = { "UserName", "Password" };
@@ -46,23 +40,34 @@ namespace Coupon_Web.BL
             return ExistUserForLogin(userName, password) && IsSystemManagerExist(userName);
         }
 
-
-        public void InsertCategory(String name, String description)
+        /// <the next functions are related to various Insert's functions.>
+        /// 
+        /// </summary>
+        public int InsertBusiness(String name, String address, String description, String managerUserName, string latitude, string longitude, string city)
         {
-            String id = (_query.SelectMaxID("Category") + 1).ToString();
+            String id = (_query.SelectMax("Buisness", "Id") + 1).ToString();
+            String[] values = new String[] { id, name, address, description, managerUserName, "false", latitude, longitude, city };
+            _query.Insert("Buisness", values);
+            return int.Parse(id);
+        }
+        public int InsertCategory(String name, String description)
+        {
+            String id = (_query.SelectMax("Category", "Id") + 1).ToString();
             String[] values = new String[] { id, name, description };
             _query.Insert("Category", values);
+            return int.Parse(id);
         }
-        public void InsertCoupon(String name, double originalMoney, double discountPrice, String expiredDate,int rating, int businessId,int category)
-        {
-            DateTime curDate = DateTime.Today.Date;
-            String curDateStr = curDate.Month + "-" + curDate.Day + "-" + curDate.Year; 
-            String id = (_query.SelectMaxID("Coupon") + 1).ToString();
-            String[] values = new String[] { id, name, originalMoney.ToString(), discountPrice.ToString(), expiredDate, rating.ToString(), businessId.ToString(), "False", curDateStr };
-            _query.Insert("Coupon", values);
-            InsertCouponCategory(int.Parse(id), category);
 
-        }
+        public int InsertCoupon(String name, double originalMoney, double discountPrice, String expiredDate,int rating, int businessId,int category)
+         {
+             DateTime curDate = DateTime.Today.Date;
+             String curDateStr = curDate.Month + "-" + curDate.Day + "-" + curDate.Year;
+             String id = (_query.SelectMax("Coupon", "Id") + 1).ToString();
+             String[] values = new String[] { id, name, originalMoney.ToString(), discountPrice.ToString(), expiredDate, rating.ToString(), businessId.ToString(), "False", curDateStr };
+             _query.Insert("Coupon", values);
+              InsertCouponCategory(int.Parse(id), category);
+             return int.Parse(id);
+         }
         public void InsertCouponCategory(int couponId, int categoryId)
         {
             String[] values = new String[] { couponId.ToString(), categoryId.ToString() };
@@ -79,11 +84,12 @@ namespace Coupon_Web.BL
             String[] values = new String[] { CustomerUserName, categoryId.ToString() };
             _query.Insert("CustomerPerferences", values);
         }
-        public void InsertDeal(int status, String serialKey, int couponId, String customerUserName, String paymentMethod)
+        public int InsertDeal(int status, String serialKey, int couponId, String customerUserName, String paymentMethod)
         {
-            String id = (_query.SelectMaxID("Deal") + 1).ToString();
+            String id = (_query.SelectMax("Deal", "Id") + 1).ToString();
             String[] values = new String[] { id, status.ToString(), serialKey, couponId.ToString(), customerUserName, paymentMethod };
             _query.Insert("Deal", values);
+            return int.Parse(id);
         }
         public void InsertFriend(String userName, String friendUserName)
         {
@@ -452,7 +458,6 @@ namespace Coupon_Web.BL
                 String[] pkNames = { "[Buisness].Name","[Buisness].approve" };
                 return _query.select(tableNames, pkNames, pkValues, colums, intersect);
             }
-
         }
 
         public DataTable getUserPersonalName(String userName)
@@ -461,6 +466,16 @@ namespace Coupon_Web.BL
             String[] pkNames = { "[Users].UserName" };
             String[] pkValues = { userName };
             String[] tableNames = { "Users" };
+            Tuple<String, String>[] intersect = new Tuple<string, string>[0];
+            return _query.select(tableNames, pkNames, pkValues, colums, intersect);
+        }
+
+        public DataTable selectAllCoupons()
+        {
+            String[] colums = {};
+            String[] pkNames = {};
+            String[] pkValues = {};
+            String[] tableNames = {"Coupon" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
@@ -486,11 +501,11 @@ namespace Coupon_Web.BL
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
         }
 
-        public DataTable selectBusinessApprove()
+        public DataTable selectBusinessApprove(bool approveValue)
         {
             String[] colums = { "[Buisness].Id", "[Buisness].Name", "[Buisness].Address", "[Buisness].Description", "[Buisness].City" };
             String[] pkNames = {"[Buisness].approve" };
-            String[] pkValues = { "False" };
+            String[] pkValues = { approveValue.ToString() };
             String[] tableNames = { "Buisness" };
             Tuple<String, String>[] intersect = new Tuple<string, string>[0];
             return _query.select(tableNames, pkNames, pkValues, colums, intersect);
