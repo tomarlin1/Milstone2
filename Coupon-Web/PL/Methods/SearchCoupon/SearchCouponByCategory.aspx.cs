@@ -32,15 +32,35 @@ namespace PL.Customer
                 }
             }
             _requests = new BlRequests();
-            _dt = _requests.selectCouponDetailsWithCategory(category.Text);
-            View.DataSource = _dt;
-            View.DataBind();
+            String user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+            {
+                _dt = _requests.selectCouponDetailsWithCategory(category.Text, (String)Session["UserName"]);
+                View.DataSource = _dt;
+                View.DataBind();
+            }
+            else
+            {
+                _dt = _requests.selectCouponDetailsWithCategory(category.Text, "");
+                View.DataSource = _dt;
+                View.DataBind();
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            _dt = _requests.selectCouponDetailsWithCategory(category.Text);
-            View.DataSource = _dt;
-            View.DataBind();
+            String user = (String)Session["User"];
+            if (user.CompareTo("Manager") == 0)
+            {
+                _dt = _requests.selectCouponDetailsWithCategory(category.Text, (String)Session["UserName"]);
+                View.DataSource = _dt;
+                View.DataBind();
+            }
+            else
+            {
+                _dt = _requests.selectCouponDetailsWithCategory(category.Text, "");
+                View.DataSource = _dt;
+                View.DataBind();
+            }
         }
         
     }
