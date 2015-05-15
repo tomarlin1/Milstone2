@@ -10,7 +10,7 @@ namespace Tests
     public class BuisnessTest
     {
         private BlRequests bl;
-        int bIDLahit, bID2;
+        int bIDLahit;
 
         [TestInitialize]
         public void SetUp()

@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 namespace Tests
 {
     [TestClass]
-    public class CategoryTest
+    public class CustomerTest
     {
         private BlRequests bl;
-        int ID;
 
         [TestInitialize]
         public void SetUp()
@@ -20,36 +19,44 @@ namespace Tests
             bl = new BlRequests();
             try
             {
-                ID =  bl.InsertCategory("abab", "i dont care");
+                bl.InsertCustomer("mimi12", "mimi@gmail.com", "089334453", "mimi", "123");
             }
             catch (Exception ee)
             { throw ee; }
         }
 
-
         [TestMethod]
-        public void InsertCategoryTest()
+        public void InsertCustomerTest()
         {
-            bool after = bl.IsCategoryExist(ID);
+            bool after = bl.IsUserExist("mimi12");
             Assert.AreEqual(after, true, "should be equal");
         }
+                
         [TestMethod]
-        public void DeleteCategoryTest()
+        public void DeleteCustomerTest()
         {
-            bool before = bl.IsCategoryExist(ID);
-            bl.DeleteCategory(ID);
-            bool after = bl.IsCategoryExist(ID);
-
+            bool before = bl.IsCustomerExist("mimi12");
+            bl.DeleteCustomer("mimi12");
+            bool after = bl.IsCustomerExist("mimi12");
             Assert.AreNotEqual(before, after, "should not be equal");
         }
 
+        [TestMethod]
+        public void LoginCustomerTest()
+        {
+            bool isConn = bl.LoginAsCustomer("mimi12", "123");
+            Assert.AreEqual(isConn, true, "should be true");
+        }
 
+
+        
         [TestCleanup]
         public void TearDown()
         {
             try
             {
-                bl.DeleteCategory(ID);
+                bl.DeleteCustomer("mimi12");
+                bl.DeleteUser("mimi12");
             }
             catch (Exception)
             { }
