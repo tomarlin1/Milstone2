@@ -8,7 +8,8 @@ namespace Coupon_Web.DAL
 {
     public class Connection
     {
-        private const string URL = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\ziv-user\Documents\בן גוריון\סמסטר ד'\ניתוח ועיצוב\Milestone2\Coupon-Web\PL\App_Data\LocalDB.mdf;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework";
+        private const string URL = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=
+                        C:\USERS\ASUS\DOCUMENTS\COUPON-WEB\COUPON-WEB\PL\APP_DATA\LOCALDB.MDF;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework";
         //|DataDirectory|\LocalDB.mdf;
 
         //singleton pattern

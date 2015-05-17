@@ -18,12 +18,14 @@ namespace Tests
         [TestInitialize]
         public void SetUp()
         {
+            int catId;
             bl = new BlRequests();
             try
             {
                 bl.InsertManager("balul12", "balul", "12345678");
                 bIDLahit = bl.InsertBusiness("Lahit", "meonot 3", "shop for students", "balul12", "33.333", "33.333", "rehovot");
-                ID = bl.InsertCoupon("masor", 1000, 100, "10-10-2010", 2, bIDLahit);
+                catId = bl.InsertCategory("cat for test", "no description");
+                ID = bl.InsertCoupon("masor", 1000, 100, "10-10-2010", 2, bIDLahit, catId);
 
             }
             catch (Exception ee)
@@ -57,7 +59,7 @@ namespace Tests
         [TestMethod]
         public void SelectCouponApproveTest()
         {
-            bl.EditBusiness(bIDLahit, "approve", "true");
+            bl.EditBusiness(bIDLahit, "approve", true);
             bl.EditCoupon(ID, "approve", true);
             String name = (bl.selectCouponsName("masor").Rows[0])[1].ToString();
             Assert.AreEqual(name, "masor", "should be equal");
@@ -73,7 +75,6 @@ namespace Tests
             int afterAppCount = bl.selectCouponApprove().Rows.Count;
             Assert.AreEqual(beforeAppCount - 1, afterAppCount, "should be equal");
         }
-
 
         [TestCleanup]
         public void TearDown()

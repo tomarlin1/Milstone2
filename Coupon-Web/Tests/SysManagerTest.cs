@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Tests
 {
     [TestClass]
-    public class CategoryTest
+    public class SysManagerTest
     {
         private BlRequests bl;
         int ID;
@@ -20,36 +20,43 @@ namespace Tests
             bl = new BlRequests();
             try
             {
-                ID =  bl.InsertCategory("abab", "i dont care");
+                bl.InsertUser("avia12", "avia", "123");
+                bl.InsertSystemManager("avia12");
             }
             catch (Exception ee)
             { throw ee; }
         }
 
-
         [TestMethod]
-        public void InsertCategoryTest()
+        public void InsertSystemManagerTest()
         {
-            bool after = bl.IsCategoryExist(ID);
+            bool after = bl.IsSystemManagerExist("avia12");
             Assert.AreEqual(after, true, "should be equal");
         }
-        [TestMethod]
-        public void DeleteCategoryTest()
-        {
-            bool before = bl.IsCategoryExist(ID);
-            bl.DeleteCategory(ID);
-            bool after = bl.IsCategoryExist(ID);
 
+        [TestMethod]
+        public void DeleteSystemManagerTest()
+        {
+            bool before = bl.IsSystemManagerExist("avia12");
+            bl.DeleteSystemManager("avia12");
+            bool after = bl.IsSystemManagerExist("avia12");
             Assert.AreNotEqual(before, after, "should not be equal");
         }
 
+        [TestMethod]
+        public void LoginSystemManagerTest()
+        {
+            bool isConn = bl.LoginAsSystemManager("avia12", "123");
+            Assert.AreEqual(isConn, true, "should be true");
+        }
 
         [TestCleanup]
         public void TearDown()
         {
             try
             {
-                bl.DeleteCategory(ID);
+                bl.DeleteSystemManager("avia12");
+                bl.DeleteUser("avia12");
             }
             catch (Exception)
             { }
